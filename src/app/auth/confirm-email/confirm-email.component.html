@@ -1,0 +1,127 @@
+<section class="centred">
+  <mat-card *ngIf="!isLoading; else loadingTemplate" class="card-alone">
+    <ng-container
+      *ngIf="!isAccountAlreadyConfirmed; else alreadyConfirmedEmailTemplate"
+    >
+      <ng-container *ngIf="token; else emailNotConfirmedTemplate">
+        <ng-container
+          *ngIf="
+            account?.isConfirmed;
+            then emailConfirmedTemplate;
+            else emailConfirmErrorTemplate
+          "
+        >
+        </ng-container>
+      </ng-container>
+    </ng-container>
+  </mat-card>
+</section>
+
+<ng-template #loadingTemplate>
+  <mat-spinner color="accent" diameter="60" class="m-16"></mat-spinner>
+</ng-template>
+
+<ng-template #emailConfirmedTemplate>
+  <div class="center pb-16">
+    <mat-icon class="status-icon">done</mat-icon>
+  </div>
+  <p i18n>Welcome {{ account!.firstName }} ! Your are now a confirmed user !</p>
+  <div class="button-group mt-16">
+    <span class="fill-remain-space"></span>
+    <button
+      mat-raised-button
+      class="rounded"
+      color="accent"
+      routerLink="/"
+      i18n
+    >
+      Continue
+    </button>
+  </div>
+</ng-template>
+
+<ng-template #emailNotConfirmedTemplate>
+  <div class="center pb-16">
+    <mat-icon class="status-icon">error_outline</mat-icon>
+  </div>
+  <p i18n>
+    You have not confirmed your email address, verify your inbox and click on
+    the link in the email to continue.
+  </p>
+  <p i18n>
+    You can request a new verification link if the old one has expired.
+  </p>
+  <div class="button-group mt-16">
+    <mat-progress-bar
+      *ngIf="isProcessing"
+      mode="indeterminate"
+      color="accent"
+      class="mt-16"
+    ></mat-progress-bar>
+
+    <span class="fill-remaining-space"></span>
+
+    <button
+      *ngIf="!isProcessing"
+      mat-raised-button
+      class="icon-after rounded"
+      color="accent"
+      (click)="onRequestConfirmEmail()"
+    >
+      <span i18n>Resend</span>
+      <mat-icon>send</mat-icon>
+    </button>
+  </div>
+</ng-template>
+
+<ng-template #emailConfirmErrorTemplate>
+  <div class="center pb-16">
+    <mat-icon class="status-icon">error_outline</mat-icon>
+  </div>
+  <p i18n class="center">
+    Could not confirm your address.
+  </p>
+  <p i18n>
+    You can request a new verification link if the old one has expired.
+  </p>
+  <div class="button-group mt-16">
+    <mat-progress-bar
+      *ngIf="isProcessing"
+      mode="indeterminate"
+      color="accent"
+      class="mt-16"
+    ></mat-progress-bar>
+
+    <span class="fill-remaining-space"></span>
+
+    <button
+      *ngIf="!isProcessing"
+      mat-raised-button
+      class="icon-after rounded"
+      color="accent"
+      (click)="onRequestConfirmEmail()"
+    >
+      <span i18n>Resend</span>
+      <mat-icon>send</mat-icon>
+    </button>
+  </div>
+</ng-template>
+
+<ng-template #alreadyConfirmedEmailTemplate>
+  <div class="center pb-16">
+    <mat-icon class="status-icon">done</mat-icon>
+  </div>
+  <p i18n>Everything is ready, your email address has already been verified.</p>
+  <div class="button-group mt-16">
+    <span class="fill-remain-space"></span>
+    <button
+      mat-raised-button
+      color="accent"
+      class="rounded"
+      routerLink="/"
+      i18n
+    >
+      Continue
+    </button>
+  </div>
+</ng-template>
