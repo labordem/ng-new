@@ -1,6 +1,6 @@
 <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
   <mat-form-field appearance="outline" color="accent" class="form-field">
-    <mat-label i18n>Email</mat-label>
+    <mat-label i18n>Email address</mat-label>
     <input
       matInput
       formControlName="identifier"
@@ -61,9 +61,8 @@
       color="accent"
       routerLink="/auth/forgot-password"
       i18n
+      >Forgot password</button
     >
-      Forgot password
-    </button>
     <button
       [disabled]="!formGroup.valid"
       *ngIf="!isLoading"

@@ -122,7 +122,7 @@ git push --follow-tags
 
 This project is available in multiple languages, it implements [Angular internationalization](https://angular.io/guide/i18n). If you run it in containerized mode Nginx server redirects users to the correct version of the app, according to their browser language.
 
-When you add/modify/delete a localized string in project you have to update locale to generate new **messages.xlf** file and translate the new string in **messages.{fr,others}.xlf** file(s).
+When you add/modify/delete a localized string in project you have to update locale to generate new **messages.xlf** file and translate the new string in **messages.{fr,others}.xlf** file(s). To do this, it is advisable to use a translation software like [Poedit](https://poedit.net/).
 
 **Example :**
 

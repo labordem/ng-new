@@ -84,17 +84,15 @@
 <ng-template #dialogTemplate>
   <h2 matDialogTitle i18n>Are you sure ?</h2>
   <mat-dialog-content>
-    <p i18n>
-      If you sign out you will have to enter your credentials again to use
-      application !
-    </p>
+    <p i18n
+      >If you sign out you will have to enter your credentials again to use
+      application !</p
+    >
   </mat-dialog-content>
   <div mat-dialog-actions>
-    <button mat-button (click)="onCloseDialog()" i18n>
-      Cancel
-    </button>
-    <button mat-button (click)="onSignout(); onCloseDialog()" i18n>
-      Sign out
-    </button>
+    <button mat-button (click)="onCloseDialog()" i18n>Cancel</button>
+    <button mat-button (click)="onSignout(); onCloseDialog()" i18n
+      >Sign out</button
+    >
   </div>
 </ng-template>
