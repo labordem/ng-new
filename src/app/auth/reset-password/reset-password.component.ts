@@ -15,7 +15,9 @@ import { ActivatedRoute } from '@angular/router';
 import { Subject, Subscription } from 'rxjs';
 import { finalize, takeUntil } from 'rxjs/operators';
 import { SnackbarService } from 'src/app/core/services/snackbar.service';
+import { mustMatchValidator } from 'src/app/shared/validators/must-match.validator';
 
+import { AuthError } from '../auth.model';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -53,7 +55,7 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
 
   async ngOnInit(): Promise<void> {
     const idFromUrl = this.activatedRoute.snapshot.paramMap.get('id') ?? '';
-    this.accountId = idFromUrl === '' ? parseInt(idFromUrl, 10) : 0;
+    this.accountId = idFromUrl !== '' ? parseInt(idFromUrl, 10) : 0;
     this.token = this.activatedRoute.snapshot.paramMap.get('token') ?? '';
   }
 
@@ -83,7 +85,18 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
       .subscribe(
         (res) => (this.isResetPasswordSucceed = true),
         (err) => {
-          this.isResetPasswordFailed = true;
+          this.errorMessage = (err as Error)?.message;
+          if (
+            this.errorMessage ===
+            AuthError.NewPasswordMustBeDifferentFromCurrent
+          ) {
+            this.isFormSubmitted = false;
+            this.formGroup.enable();
+            this.f.password.setErrors({ mustNotBeRejected: true });
+            this.errorMessage = '';
+          } else {
+            this.isResetPasswordFailed = true;
+          }
         },
       );
   }
@@ -103,10 +116,9 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
       },
       {
         updateOn,
-
         validators: [
+          mustMatchValidator('password', 'confirmPassword'),
           this.mustNotBeRejectedValidator(),
-          this.mustMatchValidator('password', 'confirmPassword'),
         ],
       },
       // tslint:enable
@@ -124,27 +136,6 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
         this.snackbarService.open(this.errorMessage, 'warn');
       }
       this.errorMessage = '';
-    };
-  }
-
-  private mustMatchValidator(
-    controlName: string,
-    matchingControlName: string,
-  ): (formGroup: FormGroup) => void {
-    return (formGroup: FormGroup) => {
-      const control = formGroup.controls[controlName];
-      const matchingControl = formGroup.controls[matchingControlName];
-      if (
-        matchingControl.errors !== null &&
-        !matchingControl.errors.mustMatch
-      ) {
-        return;
-      }
-      if (control.value !== matchingControl.value) {
-        matchingControl.setErrors({ mustMatch: true });
-      }
-      // tslint:disable-next-line: no-null-keyword
-      matchingControl.setErrors(null);
     };
   }
 }

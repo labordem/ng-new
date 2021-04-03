@@ -82,10 +82,6 @@ export class LayoutComponent implements OnInit, AfterViewChecked, OnDestroy {
     this.isDestroyed$.complete();
   }
 
-  onSignout(): void {
-    this.userService.delete();
-  }
-
   trackByIndex(index: number): number {
     return index;
   }

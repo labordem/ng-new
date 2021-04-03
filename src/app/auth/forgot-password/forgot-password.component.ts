@@ -92,7 +92,7 @@ export class ForgotPasswordComponent implements OnInit, OnDestroy {
 
   private mustNotBeRejectedValidator(): () => void {
     return () => {
-      if (this.errorMessage === AuthError.InvalidEmail) {
+      if (this.errorMessage === AuthError.EmailNotFound) {
         this.f.email.setErrors({ mustNotBeRejected: true });
       } else if (this.errorMessage !== '') {
         this.snackbarService.open(this.errorMessage, 'warn');

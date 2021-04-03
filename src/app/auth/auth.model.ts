@@ -5,7 +5,9 @@ export enum AuthError {
   InvalidPassword = 'Invalid password',
   EmailExists = 'Email already exists',
   EmailConfirmed = 'Email already confirmed',
+  EmailNotFound = 'Email not found',
   InvalidToken = 'Invalid token',
+  NewPasswordMustBeDifferentFromCurrent = 'New password must be different from current',
 }
 
 export interface ForogtPasswordDto {

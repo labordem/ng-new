@@ -19,6 +19,7 @@ import { switchMap, takeUntil } from 'rxjs/operators';
 import { ApiError } from 'src/app/core/models/error.model';
 import { SnackbarService } from 'src/app/core/services/snackbar.service';
 
+import { mustMatchValidator } from '../../shared/validators/must-match.validator';
 import { AuthError } from '../auth.model';
 import { AuthService } from '../auth.service';
 import { ConfirmEmailDialogComponent } from '../confirm-email-dialog/confirm-email-dialog.component';
@@ -112,7 +113,7 @@ export class RegisterFormComponent implements OnInit, OnDestroy {
       {
         updateOn,
         validators: [
-          this.mustMatchValidator('password', 'confirmPassword'),
+          mustMatchValidator('password', 'confirmPassword'),
           this.mustNotBeRejectedValidator(),
         ],
       },
@@ -124,27 +125,6 @@ export class RegisterFormComponent implements OnInit, OnDestroy {
     }
 
     return formGroup;
-  }
-
-  private mustMatchValidator(
-    controlName: string,
-    matchingControlName: string,
-  ): (formGroup: FormGroup) => void {
-    return (formGroup: FormGroup) => {
-      const control = formGroup.controls[controlName];
-      const matchingControl = formGroup.controls[matchingControlName];
-      if (
-        matchingControl.errors !== null &&
-        !matchingControl.errors.mustMatch
-      ) {
-        return;
-      }
-      if (control.value !== matchingControl.value) {
-        matchingControl.setErrors({ mustMatch: true });
-      }
-      // tslint:disable-next-line: no-null-keyword
-      matchingControl.setErrors(null);
-    };
   }
 
   private mustNotBeRejectedValidator(): (formGroup: FormGroup) => void {

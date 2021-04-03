@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 import { switchMap, take, tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 
-import { Account } from '../core/models/user.model';
 import { UserService } from '../core/services/user.service';
 
 import {
@@ -71,7 +70,7 @@ export class AuthService {
     if (this.isUsableWithoutApi) {
       return this.userService.account$.pipe(
         take(1),
-        switchMap((account) => confirmEmailForTest$(account as Account, token)),
+        switchMap((account) => confirmEmailForTest$(account, token)),
         tap((loggedInUser) => {
           this.userService.update(loggedInUser.account, loggedInUser.jwt);
         }),

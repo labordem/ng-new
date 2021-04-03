@@ -1,5 +1,6 @@
 import {
   ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   Inject,
   Input,
@@ -28,6 +29,7 @@ export class LayoutSettingsComponent implements OnInit {
     private readonly themeService: ThemeService,
     private readonly userService: UserService,
     private readonly dialog: MatDialog,
+    private readonly changeDetectorRef: ChangeDetectorRef,
   ) {}
 
   ngOnInit(): void {
@@ -40,9 +42,10 @@ export class LayoutSettingsComponent implements OnInit {
       ...(this.account as Account),
       avatar: selectedNewImage,
     });
+    this.changeDetectorRef.markForCheck();
   }
 
-  onSignout(): void {
+  onLogOut(): void {
     this.userService.delete();
   }
 

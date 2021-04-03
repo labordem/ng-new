@@ -78,9 +78,12 @@ export const registerForTest$ = (
 };
 
 export const confirmEmailForTest$ = (
-  account: Account,
+  account: Account | undefined,
   token: string,
 ): Observable<LoggedInUser> => {
+  if (account === undefined) {
+    return throwError(new Error(AuthError.EmailConfirmed));
+  }
   if (account.isConfirmed) {
     return throwError(new Error(AuthError.EmailConfirmed));
   }

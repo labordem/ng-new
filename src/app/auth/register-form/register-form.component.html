@@ -5,8 +5,8 @@
       matInput
       formControlName="firstName"
       color="primary"
+      autocomplete="given-name"
       required
-      autocomplete=""
     />
     <mat-error *ngIf="f.firstName?.errors?.required" i18n
       >You must fill in this field</mat-error
@@ -18,7 +18,13 @@
 
   <mat-form-field appearance="outline" color="accent" class="form-field">
     <mat-label i18n>Last name</mat-label>
-    <input matInput formControlName="lastName" color="primary" required />
+    <input
+      matInput
+      formControlName="lastName"
+      color="primary"
+      autocomplete="family-name"
+      required
+    />
     <mat-error *ngIf="f.lastName?.errors?.required" i18n
       >You must fill in this field</mat-error
     >
@@ -33,10 +39,9 @@
       matInput
       formControlName="email"
       color="primary"
-      required
       autocomplete="email"
       type="email"
-      email
+      required
     />
     <mat-error *ngIf="f.email?.errors?.required" i18n
       >You must fill in this field</mat-error
