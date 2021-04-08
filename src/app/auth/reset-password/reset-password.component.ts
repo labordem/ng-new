@@ -14,9 +14,9 @@ import {
 import { ActivatedRoute } from '@angular/router';
 import { Subject, Subscription } from 'rxjs';
 import { finalize, takeUntil } from 'rxjs/operators';
-import { SnackbarService } from 'src/app/core/services/snackbar.service';
-import { mustMatchValidator } from 'src/app/shared/validators/must-match.validator';
 
+import { SnackbarService } from '../../core/services/snackbar.service';
+import { mustMatchValidator } from '../../shared/validators/must-match.validator';
 import { AuthError } from '../auth.model';
 import { AuthService } from '../auth.service';
 

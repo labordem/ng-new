@@ -16,9 +16,9 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Subject, Subscription } from 'rxjs';
 import { switchMap, takeUntil } from 'rxjs/operators';
-import { ApiError } from 'src/app/core/models/error.model';
-import { SnackbarService } from 'src/app/core/services/snackbar.service';
 
+import { ApiError } from '../../core/models/error.model';
+import { SnackbarService } from '../../core/services/snackbar.service';
 import { mustMatchValidator } from '../../shared/validators/must-match.validator';
 import { AuthError } from '../auth.model';
 import { AuthService } from '../auth.service';

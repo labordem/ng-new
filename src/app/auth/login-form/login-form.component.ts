@@ -15,8 +15,8 @@ import {
 import { Router } from '@angular/router';
 import { Subject, Subscription } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { SnackbarService } from 'src/app/core/services/snackbar.service';
 
+import { SnackbarService } from '../../core/services/snackbar.service';
 import { AuthError } from '../auth.model';
 import { AuthService } from '../auth.service';
 

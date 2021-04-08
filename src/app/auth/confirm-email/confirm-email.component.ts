@@ -9,9 +9,9 @@ import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subject, Subscription } from 'rxjs';
 import { finalize, switchMap, takeUntil } from 'rxjs/operators';
-import { UserService } from 'src/app/core/services/user.service';
 
 import { Account } from '../../core/models/user.model';
+import { UserService } from '../../core/services/user.service';
 import { AuthError } from '../auth.model';
 import { AuthService } from '../auth.service';
 import { ConfirmEmailDialogComponent } from '../confirm-email-dialog/confirm-email-dialog.component';

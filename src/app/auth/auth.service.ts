@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { switchMap, take, tap } from 'rxjs/operators';
-import { environment } from 'src/environments/environment';
 
+import { environment } from '../../environments/environment';
 import { UserService } from '../core/services/user.service';
 
 import {

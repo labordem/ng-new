@@ -10,8 +10,8 @@ import {
 import { Meta, Title } from '@angular/platform-browser';
 import { Subject, Subscription } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { environment } from 'src/environments/environment';
 
+import { environment } from '../../../environments/environment';
 import { Account } from '../models/user.model';
 import { ThemeService } from '../services/theme.service';
 import { UserService } from '../services/user.service';
