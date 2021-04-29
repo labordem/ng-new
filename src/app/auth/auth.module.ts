@@ -25,7 +25,6 @@ const routes: Routes = [
   {
     path: 'confirm-email/:token',
     component: ConfirmEmailComponent,
-    canActivate: [UserGuard],
   },
   {
     path: 'forgot-password',

@@ -111,6 +111,7 @@ $foreground-dark: map-get($theme-dark, foreground);
     $palette-light-warn,
     $foreground-light
   );
+  color-scheme: light;
 }
 
 .theme-dark {
@@ -121,4 +122,6 @@ $foreground-dark: map-get($theme-dark, foreground);
     $palette-dark-warn,
     $foreground-dark
   );
+  color-scheme: dark;
+  scrollbar-color: #6b6b6b #2b2b2b;
 }
