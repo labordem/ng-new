@@ -20,8 +20,6 @@ export class AuthComponent implements OnInit {
   isUsableWithoutApi = environment.apiUrl === '';
   mockUser: MockUser = mockUser;
 
-  /** Fake User to test app without running API */
-
   constructor(private readonly changeDetectorRef: ChangeDetectorRef) {}
 
   ngOnInit(): void {}

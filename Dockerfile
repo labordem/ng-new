@@ -1,12 +1,15 @@
 FROM node:14.16.0-alpine AS build
 WORKDIR /app
 COPY package*.json ./
-RUN npm install
 COPY . .
+RUN chown -R node:node /app
+USER node
+RUN npm ci
 RUN npm run build:prod
 
-FROM nginx:1.18.0-alpine
+FROM nginxinc/nginx-unprivileged:1.20.0-alpine as production
 COPY --from=build /app/dist/ng-new /usr/share/nginx/html
-COPY docker/nginx.conf /etc/nginx/nginx.conf
-COPY docker/localhost.crt /etc/nginx/localhost.crt
-COPY docker/localhost.key /etc/nginx/localhost.key
+COPY docker/pwa/nginx.conf /etc/nginx/nginx.conf
+COPY docker/pwa/ssl /etc/nginx/ssl
+EXPOSE 8080
+EXPOSE 443

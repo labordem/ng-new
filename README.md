@@ -47,8 +47,8 @@ You can run this project in production mode in container, to do so you just need
 
 ```bash
 # with docker only
-docker build -t ng-new .
-docker run -d -p 80:80 -p 443:443 --name ng-new ng-new
+docker build --target production -t pwa .
+docker run -p 80:8080 -p 443:443 --name pwa pwa
 
 # if you have Docker AND Node.js installed you can use short commands :
 npm run docker:build:prod

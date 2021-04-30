@@ -15,6 +15,7 @@ export interface MockUser extends Account {
   password: string;
 }
 
+/** Fake User to test app without running API */
 export const mockUser: MockUser = {
   id: 42,
   email: 'johndoe@email.com',

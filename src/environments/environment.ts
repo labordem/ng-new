@@ -7,6 +7,7 @@ import { version } from '../../package.json';
 export const environment = {
   production: false,
   version: `(dev) v${version}`,
+  /** set to '' empty string to enable mocked account */
   apiUrl: '', // http://localhost:3000/api
 };
 
