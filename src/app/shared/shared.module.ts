@@ -18,6 +18,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { ImageDefaultDirective } from './directives/image-default.directive';
+import { ApiPathPipe } from './pipes/api-path.pipe';
 
 const materialModules = [
   MatButtonModule,
@@ -37,14 +38,18 @@ const materialModules = [
   MatTooltipModule,
 ];
 
+const directives = [ImageDefaultDirective];
+const pipes = [ApiPathPipe];
+
 @NgModule({
-  declarations: [ImageDefaultDirective],
-  imports: [CommonModule],
+  declarations: [directives, pipes],
+  imports: [CommonModule, materialModules],
   exports: [
-    materialModules,
     FormsModule,
     ReactiveFormsModule,
-    ImageDefaultDirective,
+    materialModules,
+    directives,
+    pipes,
   ],
 })
 export class SharedModule {}

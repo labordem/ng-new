@@ -8,7 +8,6 @@ export interface LoggedInUser {
   account: Account;
 }
 
-/** From 'account' table */
 export interface Account {
   id: number;
   createdAt: Date;
@@ -17,6 +16,20 @@ export interface Account {
   lastName: string;
   email: string;
   roles: Role[];
-  avatar?: string;
+  avatar?: Upload;
   isConfirmed: boolean;
+}
+
+export interface Upload {
+  /**
+   * File path, must be prefixed by server host
+   * @example 'uploads/public/uuid.jpg'
+   */
+  path: string;
+
+  /**
+   * Resized file path, must be prefixed by server host
+   * @example 'uploads/public/uuid-thumb.jpg'
+   */
+  thumbPath: string;
 }

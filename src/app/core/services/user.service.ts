@@ -1,8 +1,11 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { ReplaySubject } from 'rxjs';
+import { Observable, of, ReplaySubject } from 'rxjs';
+import { switchMap, take } from 'rxjs/operators';
 
-import { Account } from '../models/user.model';
+import { environment } from '../../../environments/environment';
+import { Account, Upload } from '../models/user.model';
 
 import { LocalStorageService } from './local-storage.service';
 
@@ -19,6 +22,7 @@ export class UserService {
   constructor(
     private readonly localStorageService: LocalStorageService,
     private readonly router: Router,
+    private readonly http: HttpClient,
   ) {
     const account = this.localStorageService.getItemInStorage(
       this.accountKey,
@@ -48,5 +52,19 @@ export class UserService {
     this.localStorageService.removeItemInStorage(this.jwtKey);
     this.jwt = undefined;
     this.router.navigate(['/auth']);
+  }
+
+  updateAvatar$(formData: FormData): Observable<Upload | undefined> {
+    return this.account$.pipe(
+      take(1),
+      switchMap((account) =>
+        account !== undefined
+          ? this.http.post<Upload>(
+              `${environment.apiUrl}/accounts/${account.id}/avatar`,
+              formData,
+            )
+          : of(undefined),
+      ),
+    );
   }
 }

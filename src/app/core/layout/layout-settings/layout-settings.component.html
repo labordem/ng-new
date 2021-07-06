@@ -10,12 +10,12 @@
 >
   <img
     *ngIf="account"
-    src="{{ account!.avatar }}"
+    src="{{ account?.avatar?.thumbPath | apiPath }}"
     default="profile"
     i18n-alt
     alt="Your avatar"
-    height="33"
-    width="33"
+    height="34"
+    width="34"
   />
   <mat-icon *ngIf="!account">person</mat-icon>
 </button>
@@ -32,10 +32,12 @@
         (click)="$event.stopPropagation(); file.click()"
       >
         <img
-          src="{{ account.avatar }}"
+          src="{{ account?.avatar?.thumbPath | apiPath }}"
           default="profile"
           i18n-alt
           alt="Your avatar"
+          height="90"
+          width="90"
         />
         <input
           #file
