@@ -51,11 +51,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/layout/layout-settings/layout-settings.component.html</context>
-          <context context-type="linenumber">16</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/layout/layout-settings/layout-settings.component.html</context>
-          <context context-type="linenumber">38</context>
+          <context context-type="linenumber">40</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/layout/layout-sidenav/layout-sidenav.component.html</context>
@@ -119,7 +115,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/layout/layout-settings/layout-settings.component.html</context>
-          <context context-type="linenumber">56</context>
+          <context context-type="linenumber">54</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2949848596707725099" datatype="html">
@@ -127,11 +123,11 @@
         <target state="translated">Se déconnecter</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/layout/layout-settings/layout-settings.component.html</context>
-          <context context-type="linenumber">63</context>
+          <context context-type="linenumber">61</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/layout/layout-settings/layout-settings.component.html</context>
-          <context context-type="linenumber">95</context>
+          <context context-type="linenumber">102</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2691014706193835883" datatype="html">
@@ -139,7 +135,7 @@
         <target state="translated">Thème clair</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/layout/layout-settings/layout-settings.component.html</context>
-          <context context-type="linenumber">70</context>
+          <context context-type="linenumber">68</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7278213602149834905" datatype="html">
@@ -147,7 +143,15 @@
         <target state="translated">Thème sombre</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/layout/layout-settings/layout-settings.component.html</context>
-          <context context-type="linenumber">74</context>
+          <context context-type="linenumber">72</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4135492243996409237" datatype="html">
+        <source>Import your avatar</source>
+        <target state="translated">Importer votre avatar</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/layout/layout-settings/layout-settings.component.html</context>
+          <context context-type="linenumber">83</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7007809073199554622" datatype="html">
@@ -155,7 +159,7 @@
         <target state="translated">Êtes vous sûr ?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/layout/layout-settings/layout-settings.component.html</context>
-          <context context-type="linenumber">85</context>
+          <context context-type="linenumber">92</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2042192176507364548" datatype="html">
@@ -163,7 +167,7 @@
         <target state="translated">Si vous vous déconnectez, vous devrez saisir à nouveau vos informations d’identification pour utiliser l’application !</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/layout/layout-settings/layout-settings.component.html</context>
-          <context context-type="linenumber">88,89</context>
+          <context context-type="linenumber">95</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2159130950882492111" datatype="html">
@@ -171,7 +175,7 @@
         <target state="translated">Annuler</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/layout/layout-settings/layout-settings.component.html</context>
-          <context context-type="linenumber">93</context>
+          <context context-type="linenumber">100</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2275328567992347600" datatype="html">
@@ -180,6 +184,50 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/not-found/not-found.component.html</context>
           <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="187187500641108332" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{     isMultiple ? 'Drag files here' : 'Drag a file here'   }}"/></source>
+        <target state="translated">{{     isMultiple ? 'Faire glisser des fichiers ici' : 'Faites glisser un fichier ici'     }}</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/file-upload-zone/file-upload-zone.component.html</context>
+          <context context-type="linenumber">22,24</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/file-upload-zone/file-upload-zone.component.html</context>
+          <context context-type="linenumber">28,30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5504129468136884250" datatype="html">
+        <source>Or</source>
+        <target state="translated">Ou</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/file-upload-zone/file-upload-zone.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7107474951200075060" datatype="html">
+        <source>Selected file preview</source>
+        <target state="translated">Aperçu du fichier sélectionné</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/file-upload-zone/file-upload-zone.component.html</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6945988051184690124" datatype="html">
+        <source>Remove item</source>
+        <target state="translated">Supprimer l’élément</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/file-upload-zone/file-upload-zone.component.html</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5937417089036392459" datatype="html">
+        <source>Remove item button</source>
+        <target state="translated">Bouton Supprimer l’élément</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/file-upload-zone/file-upload-zone.component.html</context>
+          <context context-type="linenumber">64</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2336550011721758066" datatype="html">
@@ -404,6 +452,10 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/reset-password/reset-password.component.html</context>
           <context context-type="linenumber">106</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/file-upload-zone/file-upload-zone.component.html</context>
+          <context context-type="linenumber">39</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2153939531896947178" datatype="html">

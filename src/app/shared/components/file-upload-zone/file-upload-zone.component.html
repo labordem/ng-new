@@ -1,0 +1,72 @@
+<section
+  class="file-upload-zone theme-foreground-secondary-color"
+  (dragover)="(false)"
+  (dragend)="(false)"
+  (drop)="onFilesImport($event)"
+>
+  <input
+    #file
+    type="file"
+    [accept]="acceptedFiles"
+    [multiple]="isMultiple"
+    hidden
+    (change)="onFilesImport($event)"
+  />
+
+  <ng-container *ngIf="!previews.length; else filePreviewTemplate">
+    <mat-icon class="theme-foreground-secondary-color file-upload-zone-icon"
+      >file_upload</mat-icon
+    >
+  </ng-container>
+
+  <span i18n class="p-5 theme-foreground-secondary-color">{{
+    isMultiple ? 'Drag files here' : 'Drag a file here'
+  }}</span>
+  <span i18n class="p-5 theme-foreground-secondary-color">Or</span>
+
+  <div class="button-group">
+    <button mat-raised-button class="rounded" (click)="file.click()" i18n>{{
+      isMultiple ? 'Select files' : 'Select a file'
+    }}</button>
+    <button
+      [disabled]="!previews.length"
+      mat-raised-button
+      class="icon-after rounded"
+      color="accent"
+      type="submit"
+      (click)="onSubmit()"
+    >
+      <span i18n>Submit</span>
+      <mat-icon>send</mat-icon>
+    </button>
+  </div>
+</section>
+
+<ng-template #filePreviewTemplate>
+  <div class="files-preview">
+    <div
+      *ngFor="let preview of previews; let index = index; trackBy: trackByIndex"
+      class="file-preview-wrapper"
+    >
+      <img
+        draggable="false"
+        [src]="preview"
+        i18n-alt
+        alt="Selected file preview"
+        class="active"
+      />
+      <button
+        mat-raised-button
+        class="remove-item-button round mat-elevation-z1"
+        color="warn"
+        matTooltip="Remove item"
+        i18n-matTooltip
+        aria-label="Remove item button"
+        i18n-aria-label
+        (click)="onItemRemove(index)"
+      >
+        <mat-icon inline>close</mat-icon>
+      </button>
+    </div>
+  </div>
+</ng-template>

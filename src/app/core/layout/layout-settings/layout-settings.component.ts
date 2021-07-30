@@ -49,13 +49,9 @@ export class LayoutSettingsComponent implements OnInit, OnDestroy {
     this.isDestroyed$.complete();
   }
 
-  onImportImage($event: Event | DataTransfer): void {
-    if (this.isUsableWithoutApi) {
-      return void this.snackbarService.open('Not available in demo', 'warn');
-    }
-    const file = this.getFileFromEvent($event);
+  onAvatarUpload(files: File[]): void {
     const formData = new FormData();
-    formData.append('file', file);
+    formData.append('file', files[0]);
 
     void this.userService
       .updateAvatar$(formData)
@@ -66,13 +62,14 @@ export class LayoutSettingsComponent implements OnInit, OnDestroy {
             ...(this.account as Account),
             avatar: upload,
           });
+          this.dialog.closeAll();
           this.changeDetectorRef.markForCheck();
         },
         (err) => this.snackbarService.open((err as Error).message, 'warn'),
       );
   }
 
-  onLogOut(): void {
+  onSignOut(): void {
     this.userService.delete();
   }
 
@@ -87,14 +84,5 @@ export class LayoutSettingsComponent implements OnInit, OnDestroy {
   onToggleDarkTheme(): void {
     this.themeService.toggleDark();
     this.isDarkThemeToggled = this.themeService.isDarkToggled;
-  }
-
-  private getFileFromEvent($event: Event | DataTransfer): File {
-    const event = $event as Event;
-    event.preventDefault();
-    const target = event.target as HTMLInputElement;
-    const file = (target?.files ?? ($event as DataTransfer)?.files)[0];
-
-    return file;
   }
 }

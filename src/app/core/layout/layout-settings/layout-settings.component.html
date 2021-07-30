@@ -29,7 +29,9 @@
         matTooltip="Click here to set a new image"
         i18n-matTooltip
         matTooltipPosition="above"
-        (click)="$event.stopPropagation(); file.click()"
+        (click)="
+          $event.stopPropagation(); onOpenDialog(fileUploadDialogTemplate)
+        "
       >
         <img
           src="{{ account?.avatar?.thumbPath | apiPath }}"
@@ -38,12 +40,6 @@
           alt="Your avatar"
           height="90"
           width="90"
-        />
-        <input
-          #file
-          type="file"
-          accept="image/*"
-          (change)="onImportImage($event)"
         />
       </button>
 
@@ -60,7 +56,7 @@
       <mat-divider></mat-divider>
     </ng-container>
     <ng-container *ngIf="account">
-      <button mat-menu-item (click)="onOpenDialog(dialogTemplate)">
+      <button mat-menu-item (click)="onOpenDialog(signOutDialogTemplate)">
         <mat-icon>exit_to_app</mat-icon>
         <span i18n>Sign out</span>
       </button>
@@ -83,7 +79,16 @@
   </ng-template>
 </mat-menu>
 
-<ng-template #dialogTemplate>
+<ng-template #fileUploadDialogTemplate>
+  <h2 matDialogTitle i18n>Import your avatar</h2>
+  <mat-dialog-content>
+    <app-file-upload-zone
+      (filesUpload)="onAvatarUpload($event)"
+    ></app-file-upload-zone>
+  </mat-dialog-content>
+</ng-template>
+
+<ng-template #signOutDialogTemplate>
   <h2 matDialogTitle i18n>Are you sure ?</h2>
   <mat-dialog-content>
     <p i18n
@@ -93,7 +98,7 @@
   </mat-dialog-content>
   <div mat-dialog-actions>
     <button mat-button (click)="onCloseDialog()" i18n>Cancel</button>
-    <button mat-button (click)="onLogOut(); onCloseDialog()" i18n
+    <button mat-button (click)="onSignOut(); onCloseDialog()" i18n
       >Sign out</button
     >
   </div>

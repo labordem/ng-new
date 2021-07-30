@@ -1,0 +1,70 @@
+.file-upload-zone {
+  align-items: center;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 2px;
+  outline: 2px dashed;
+  padding: 20px;
+  text-align: center;
+
+  img {
+    max-height: 150px;
+  }
+}
+
+.file-upload-zone-icon {
+  font-size: 100px;
+  height: 100px;
+  width: 100px;
+}
+
+.files-preview {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: row;
+}
+
+.files-preview img {
+  z-index: 0;
+}
+
+@mixin round-button($sizeInPixels, $paddingInPixels) {
+  border-radius: 50%;
+  height: $sizeInPixels + $paddingInPixels;
+  line-height: 1;
+  min-width: unset;
+  padding: 0;
+  width: $sizeInPixels + $paddingInPixels;
+}
+
+.round {
+  @include round-button(24px, 2px);
+}
+
+.file-preview-wrapper {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  margin: 5px;
+  padding: 10px;
+  position: relative;
+
+  .remove-item-button {
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    z-index: 1;
+  }
+}
+
+.button-group {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  button {
+    margin: 5px;
+  }
+}

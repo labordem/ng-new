@@ -17,9 +17,11 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
+import { FileUploadZoneComponent } from './components/file-upload-zone/file-upload-zone.component';
 import { ImageDefaultDirective } from './directives/image-default.directive';
 import { ApiPathPipe } from './pipes/api-path.pipe';
 
+const angularModules = [FormsModule, ReactiveFormsModule];
 const materialModules = [
   MatButtonModule,
   MatCardModule,
@@ -38,18 +40,13 @@ const materialModules = [
   MatTooltipModule,
 ];
 
+const components = [FileUploadZoneComponent];
 const directives = [ImageDefaultDirective];
 const pipes = [ApiPathPipe];
 
 @NgModule({
-  declarations: [directives, pipes],
+  declarations: [components, directives, pipes],
   imports: [CommonModule, materialModules],
-  exports: [
-    FormsModule,
-    ReactiveFormsModule,
-    materialModules,
-    directives,
-    pipes,
-  ],
+  exports: [angularModules, materialModules, components, directives, pipes],
 })
 export class SharedModule {}
