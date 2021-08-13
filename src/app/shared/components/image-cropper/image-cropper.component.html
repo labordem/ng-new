@@ -1,0 +1,35 @@
+<!-- <input type="file" (change)="fileChangeEvent($event)" /> -->
+
+<section class="image-cropper">
+  <image-cropper
+    *ngIf="originalFile"
+    [imageFile]="originalFile"
+    [maintainAspectRatio]="true"
+    [aspectRatio]="aspectRatio"
+    [format]="format"
+    backgroundColor="black"
+    (imageCropped)="onImageCropped($event)"
+    (cropperReady)="onCropperReady()"
+    (loadImageFailed)="onLoadImageFailed()"
+  ></image-cropper>
+
+  <div class="image-cropper-result">
+    <img
+      [style]="isRoundPreview ? 'border-radius: 50%' : ''"
+      *ngIf="originalFile"
+      height="200"
+      width="200"
+      [src]="croppedBase64Image"
+    />
+    <button
+      mat-raised-button
+      class="icon-after rounded"
+      color="accent"
+      type="submit"
+      (click)="onSubmit()"
+    >
+      <span i18n>Confirm</span>
+      <mat-icon>done</mat-icon>
+    </button>
+  </div>
+</section>

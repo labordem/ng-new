@@ -83,6 +83,9 @@
   <h2 matDialogTitle i18n>Import your avatar</h2>
   <mat-dialog-content>
     <app-file-upload-zone
+      acceptedFiles="image/png, image/jpeg"
+      [isResizeEnabled]="true"
+      [isRoundPreview]="true"
       (filesUpload)="onAvatarUpload($event)"
     ></app-file-upload-zone>
   </mat-dialog-content>

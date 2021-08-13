@@ -1,4 +1,5 @@
 <section
+  *ngIf="!isCropModeActive; else cropModeTemplate"
   class="file-upload-zone theme-foreground-secondary-color"
   (dragover)="(false)"
   (dragend)="(false)"
@@ -13,21 +14,36 @@
     (change)="onFilesImport($event)"
   />
 
-  <ng-container *ngIf="!previews.length; else filePreviewTemplate">
-    <mat-icon class="theme-foreground-secondary-color file-upload-zone-icon"
-      >file_upload</mat-icon
-    >
-  </ng-container>
-
-  <span i18n class="p-5 theme-foreground-secondary-color">{{
-    isMultiple ? 'Drag files here' : 'Drag a file here'
-  }}</span>
+  <mat-icon
+    *ngIf="!previews.length; else filePreviewTemplate"
+    class="theme-foreground-secondary-color file-upload-zone-icon"
+    >file_upload</mat-icon
+  >
+  <span *ngIf="isMultiple" class="p-5 theme-foreground-secondary-color" i18n
+    >Drag files here</span
+  >
+  <span *ngIf="!isMultiple" class="p-5 theme-foreground-secondary-color" i18n
+    >Drag a file here</span
+  >
   <span i18n class="p-5 theme-foreground-secondary-color">Or</span>
 
   <div class="button-group">
-    <button mat-raised-button class="rounded" (click)="file.click()" i18n>{{
-      isMultiple ? 'Select files' : 'Select a file'
-    }}</button>
+    <button
+      *ngIf="isMultiple"
+      mat-raised-button
+      class="rounded"
+      (click)="file.click()"
+      i18n
+      >Select files</button
+    >
+    <button
+      *ngIf="!isMultiple"
+      mat-raised-button
+      class="rounded"
+      (click)="file.click()"
+      i18n
+      >Select a file</button
+    >
     <button
       [disabled]="!previews.length"
       mat-raised-button
@@ -41,6 +57,15 @@
     </button>
   </div>
 </section>
+
+<ng-template #cropModeTemplate>
+  <app-image-cropper
+    [aspectRatio]="imageAspectRatio ?? 1 / 1"
+    [isRoundPreview]="isRoundPreview"
+    [originalFile]="fileToCrop!.file"
+    (crop)="onImageCropped($event)"
+  ></app-image-cropper>
+</ng-template>
 
 <ng-template #filePreviewTemplate>
   <div class="files-preview">

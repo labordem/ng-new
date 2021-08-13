@@ -8,6 +8,8 @@ import {
   Output,
 } from '@angular/core';
 
+import { ImageCrop } from '../image-cropper/image-cropper.component';
+
 @Component({
   selector: 'app-file-upload-zone',
   templateUrl: './file-upload-zone.component.html',
@@ -16,11 +18,15 @@ import {
 })
 export class FileUploadZoneComponent implements OnInit {
   @Input() isMultiple = false;
-  @Input() acceptedFiles: 'image/*' = 'image/*';
-
+  @Input() acceptedFiles = 'image/png, image/jpeg';
+  @Input() isRoundPreview = false;
+  @Input() isResizeEnabled = false;
+  @Input() imageAspectRatio?: number;
   @Output() readonly filesUpload = new EventEmitter<File[]>();
   files: File[] = [];
   previews: string[] = [];
+  isCropModeActive = false;
+  fileToCrop?: { file: File; index: number };
 
   constructor(private readonly changeDetectorRef: ChangeDetectorRef) {}
 
@@ -38,6 +44,13 @@ export class FileUploadZoneComponent implements OnInit {
     } else {
       this.files = importedFiles;
       this.previews = importedFilesPreviews;
+      const isResizableImage =
+        this.files[0].type === 'image/png' ||
+        this.files[0].type === 'image/jpeg';
+      if (this.isResizeEnabled && isResizableImage) {
+        const lastIndex = this.files.length - 1;
+        this.imageCrop(lastIndex);
+      }
     }
     this.changeDetectorRef.markForCheck();
   }
@@ -45,6 +58,16 @@ export class FileUploadZoneComponent implements OnInit {
   onItemRemove(removedPreviewIndex: number): void {
     this.previews.splice(removedPreviewIndex, 1);
     this.files.splice(removedPreviewIndex, 1);
+  }
+
+  onImageCropped(crop: ImageCrop): void {
+    if (this.fileToCrop !== undefined) {
+      const index = this.fileToCrop.index;
+      this.previews[index] = crop.base64;
+      this.files[index] = crop.file;
+      this.isCropModeActive = false;
+      this.fileToCrop = undefined;
+    }
   }
 
   onSubmit(): void {
@@ -76,6 +99,15 @@ export class FileUploadZoneComponent implements OnInit {
     }
 
     return files;
+  }
+
+  private imageCrop(cropPreviewIndex: number): void {
+    this.isCropModeActive = true;
+    this.fileToCrop = {
+      file: this.files[cropPreviewIndex],
+      index: cropPreviewIndex,
+    };
+    this.changeDetectorRef.detectChanges();
   }
 
   private getImageStringFromFile(file: File): Promise<string> {
