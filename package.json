@@ -41,21 +41,7 @@
     }
   },
   "lint-staged": {
-    "*.scss": "stylelint --fix --max-warnings 0",
     "**/*.{ts,tsx,js,jsx,vue,flow,gql,graphql,html,scss,css,less,json,yaml,yml,md}": "prettier --write"
-  },
-  "stylelint": {
-    "extends": [
-      "stylelint-config-sass-guidelines"
-    ],
-    "ignoreFiles": [
-      "dist/**/*"
-    ],
-    "defaultSeverity": "warning",
-    "rules": {
-      "function-parentheses-space-inside": "never-single-line",
-      "no-empty-source": null
-    }
   },
   "standard-version": {
     "scripts": {
@@ -105,8 +91,6 @@
     "protractor": "~7.0.0",
     "rxjs-tslint-rules": "^4.34.7",
     "standard-version": "^9.1.0",
-    "stylelint": "^13.8.0",
-    "stylelint-config-sass-guidelines": "^7.1.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "tslint-config-prettier": "^1.18.0",
