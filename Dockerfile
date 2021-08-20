@@ -9,7 +9,7 @@ RUN npm run build:prod
 
 FROM nginxinc/nginx-unprivileged:1.20.0-alpine as production
 COPY --from=build /app/dist/ng-new /usr/share/nginx/html
-COPY docker/pwa/nginx.conf /etc/nginx/nginx.conf
-COPY docker/pwa/ssl /etc/nginx/ssl
+COPY docker/ng-new/nginx.conf /etc/nginx/nginx.conf
+COPY docker/ng-new/ssl /etc/nginx/ssl
 EXPOSE 8080
 EXPOSE 443
