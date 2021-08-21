@@ -3,7 +3,6 @@
 # environment
 .env
 /pgdata
-/docs/compodoc
 
 # compiled output
 /dist

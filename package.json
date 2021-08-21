@@ -11,7 +11,7 @@
     "ng": "ng",
     "build": "ng build",
     "build:prod": "ng build --configuration production",
-    "build:docs": "ng build --configuration production --output-path docs --base-href /ng-new/",
+    "build:docs": "npm run build:prod -- --output-path docs --base-href /ng-new/ && npm run doc:build",
     "start": "ng serve",
     "start:fr": "ng serve --configuration=fr --port=4201",
     "lint": "ng lint -- --fix",
@@ -20,11 +20,12 @@
     "docker:prod": "docker start ng-new || echo \"Container doesn't exists, so run it instead...\" && docker run -p 80:8080 -p 443:443 --name ng-new ng-new",
     "docker:build:prod": "docker build --target production -t ng-new .",
     "cz": "cz",
-    "doc": "compodoc -p tsconfig.json -s -o -d ./docs/compodoc --hideGenerator",
+    "doc": "npm run doc:build -- -s -o",
+    "doc:build": "compodoc -p tsconfig.json -d ./docs/compodoc --hideGenerator --silent",
     "locale": "ng extract-i18n --output-path src/locale --format xlf && xliffmerge --profile xliffmerge.json",
     "analyze": "npm run build:prod -- --source-map && npx source-map-explorer dist/ng-new/en-US/main.*.js",
     "release": "standard-version --commitAll --releaseCommitMessageFormat \"release: v{{currentTag}}\"",
-    "release:alpha": "standard-version --prerelease alpha --commitAll --releaseCommitMessageFormat \"release: v{{currentTag}}\""
+    "release:prerelease": "npm run release -- --prerelease"
   },
   "config": {
     "commitizen": {
@@ -45,7 +46,7 @@
   },
   "standard-version": {
     "scripts": {
-      "postbump": "npm run build:docs && git add docs"
+      "postchangelog": "npm run build:docs && git add docs"
     }
   },
   "dependencies": {

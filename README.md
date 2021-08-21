@@ -8,7 +8,7 @@
 
 ![angular version](https://img.shields.io/github/package-json/dependency-version/miaborde/ng-new/@angular/core?label=angular&logo=angular)
 
-[demo (en-US)](https://miaborde.github.io/ng-new/en-US) - [demo (fr)](https://miaborde.github.io/ng-new/fr) - [changelog](./CHANGELOG.md)
+[demo (en-US)](https://miaborde.github.io/ng-new/en-US) - [demo (fr)](https://miaborde.github.io/ng-new/fr) - [compodoc](https://miaborde.github.io/ng-new/compodoc) - [changelog](./CHANGELOG.md)
 
 </div>
 
@@ -99,6 +99,7 @@ This project respects [Semantic Versioning](https://semver.org).
 To easily respect this specification a tool is provided: [Standard-version](https://github.com/conventional-changelog/standard-version).
 
 > **Note:** commit or stash any changes before create a release.
+> **Note:** Semantic versioning works differently for versions starting with `v0.x.x`. Everything before `v1.0.0` is considered experimental and breaking changes are only minor version bumps. The moment you feel comfortable you need to bump the version manually to `v1.0.0` and then the well-known versioning kicks in where breaking changes bump the major version, features bump the minor and fixes bump the patch version.
 
 **Example :**
 
@@ -106,21 +107,29 @@ To easily respect this specification a tool is provided: [Standard-version](http
 # add your changes
 git add .
 
-# perform release modifications, and commit all staged changes
-npm run release
+# release first version of the project (v0.0.0)
+npm run release -- --first-release
 # OR
-npm run release:alpha
+# release first stable version of the project (v1.0.0)
+npm run release -- --release-as 1.0.0
+# OR
+# perform a prerelease
+npm run release:prerelease
+# OR
+# perform a release
+npm run release
 
-# push your changes, keep version tag
+# push your changes, WITH version tags
 git push --follow-tags
 ```
 
 > **When you perform a release you automatically perform the following actions :**
 >
-> - increment version number in package.json (uses the `fix:` and `feat:` tags to establish the semantic versioning)
-> - add a git tag
-> - build Github Pages demo
-> - update **CHANGELOG.md**
+> - increment version number in **package.json** (uses the `fix:` and `feat:` tags to establish the semantic versioning)
+> - add a [Git tag](https://git-scm.com/book/en/v2/Git-Basics-Tagging)
+> - build project in prod mode for [Github Pages](https://pages.github.com/) demos and [Documentation](#documentation) in **./docs** folder
+> - create/update [CHANGELOG.md](./CHANGELOG.md)
+> - commit all staged changes with correct commit message
 
 ## Internationalization
 
