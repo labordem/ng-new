@@ -1,0 +1,700 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ng-new documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">ng-new documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content miscellaneous-variables">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   
+
+<ol class="breadcrumb">
+  <li>Miscellaneous</li>
+  <li>Variables</li>
+</ol>
+
+<section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <ul class="index-list">
+                        <li>
+                            <a href="#confirmEmailForTest$" title="src/app/auth/auth.mock.ts"><b>confirmEmailForTest$</b>&nbsp;&nbsp;&nbsp;(src/.../auth.mock.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#context" title="src/test.ts"><b>context</b>&nbsp;&nbsp;&nbsp;(src/.../test.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#directives" title="src/app/shared/shared.module.ts"><b>directives</b>&nbsp;&nbsp;&nbsp;(src/.../shared.module.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#environment" title="src/environments/environment.prod.ts"><b>environment</b>&nbsp;&nbsp;&nbsp;(src/.../environment.prod.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#environment" title="src/environments/environment.ts"><b>environment</b>&nbsp;&nbsp;&nbsp;(src/.../environment.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#forgotPasswordForTest$" title="src/app/auth/auth.mock.ts"><b>forgotPasswordForTest$</b>&nbsp;&nbsp;&nbsp;(src/.../auth.mock.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#loginForTest$" title="src/app/auth/auth.mock.ts"><b>loginForTest$</b>&nbsp;&nbsp;&nbsp;(src/.../auth.mock.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#materialModules" title="src/app/shared/shared.module.ts"><b>materialModules</b>&nbsp;&nbsp;&nbsp;(src/.../shared.module.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#mockDelay" title="src/app/auth/auth.mock.ts"><b>mockDelay</b>&nbsp;&nbsp;&nbsp;(src/.../auth.mock.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#mockUser" title="src/app/auth/auth.mock.ts"><b>mockUser</b>&nbsp;&nbsp;&nbsp;(src/.../auth.mock.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#pipes" title="src/app/shared/shared.module.ts"><b>pipes</b>&nbsp;&nbsp;&nbsp;(src/.../shared.module.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#registerForTest$" title="src/app/auth/auth.mock.ts"><b>registerForTest$</b>&nbsp;&nbsp;&nbsp;(src/.../auth.mock.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#require" title="src/test.ts"><b>require</b>&nbsp;&nbsp;&nbsp;(src/.../test.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#resendConfirmationEmailForTest$" title="src/app/auth/auth.mock.ts"><b>resendConfirmationEmailForTest$</b>&nbsp;&nbsp;&nbsp;(src/.../auth.mock.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#resetPasswordForTest$" title="src/app/auth/auth.mock.ts"><b>resetPasswordForTest$</b>&nbsp;&nbsp;&nbsp;(src/.../auth.mock.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#validToken" title="src/app/auth/auth.mock.ts"><b>validToken</b>&nbsp;&nbsp;&nbsp;(src/.../auth.mock.ts)</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    <h3>src/app/auth/auth.mock.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="confirmEmailForTest$"></a>
+                        <span class="name">
+                            <b>
+                            confirmEmailForTest$</b>
+                            <a href="#confirmEmailForTest$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>(
+  account: Account | undefined,
+  token: string,
+): Observable&lt;LoggedInUser&gt; &#x3D;&gt; {
+  if (account &#x3D;&#x3D;&#x3D; undefined) {
+    return throwError(new Error(AuthError.EmailConfirmed));
+  }
+  if (account.isConfirmed) {
+    return throwError(new Error(AuthError.EmailConfirmed));
+  }
+  if (token !&#x3D;&#x3D; validToken) {
+    return of(undefined).pipe(
+      delay(mockDelay),
+      switchMap(() &#x3D;&gt; {
+        return throwError(new Error(AuthError.InvalidToken));
+      }),
+    );
+  }
+  const confirmedMockUser &#x3D; { ...mockUser, isConfirmed: true };
+
+  return of({
+    jwt: &#x27;ey...&#x27;,
+    account: confirmedMockUser,
+  }).pipe(delay(mockDelay));
+}</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="forgotPasswordForTest$"></a>
+                        <span class="name">
+                            <b>
+                            forgotPasswordForTest$</b>
+                            <a href="#forgotPasswordForTest$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>(): Observable&lt;{
+  isProcessed: boolean;
+}&gt; &#x3D;&gt; {
+  return of({ isProcessed: true }).pipe(delay(mockDelay));
+}</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="loginForTest$"></a>
+                        <span class="name">
+                            <b>
+                            loginForTest$</b>
+                            <a href="#loginForTest$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>(input: LoginDto): Observable&lt;LoggedInUser&gt; &#x3D;&gt; {
+  const isEmailCorrect &#x3D; input.email.toLowerCase() &#x3D;&#x3D;&#x3D; mockUser.email;
+  if (!isEmailCorrect) {
+    return of(undefined).pipe(
+      delay(mockDelay),
+      switchMap(() &#x3D;&gt; throwError(new Error(&#x27;Invalid email&#x27;))),
+    );
+  }
+  const isPasswordCorrect &#x3D; input.password &#x3D;&#x3D;&#x3D; mockUser.password;
+  if (!isPasswordCorrect) {
+    return of(undefined).pipe(
+      delay(mockDelay),
+      switchMap(() &#x3D;&gt; throwError(new Error(&#x27;Invalid password&#x27;))),
+    );
+  }
+  const { password, ...account } &#x3D; mockUser;
+
+  return of({
+    jwt: &#x27;ey...&#x27;,
+    account,
+  } as LoggedInUser).pipe(delay(mockDelay));
+}</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="mockDelay"></a>
+                        <span class="name">
+                            <b>
+                            mockDelay</b>
+                            <a href="#mockDelay"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>1000</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="mockUser"></a>
+                        <span class="name">
+                            <b>
+                            mockUser</b>
+                            <a href="#mockUser"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/MockUser.html" target="_self" >MockUser</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+  id: 42,
+  email: &#x27;johndoe@email.com&#x27;,
+  password: &#x27;JohnDoePass123&#x27;,
+  firstName: &#x27;John&#x27;,
+  lastName: &#x27;Doe&#x27;,
+  isConfirmed: true,
+  createdAt: new Date(&#x27;September 22, 2018 15:00:00&#x27;),
+  updatedAt: new Date(&#x27;October 12, 2020 19:00:00&#x27;),
+  roles: [Role.Ghost],
+}</code>
+                        </td>
+                    </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Fake User to test app without running API </p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="registerForTest$"></a>
+                        <span class="name">
+                            <b>
+                            registerForTest$</b>
+                            <a href="#registerForTest$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>(
+  input: RegisterDto,
+): Observable&lt;LoggedInUser&gt; &#x3D;&gt; {
+  if (input.email.toLowerCase() &#x3D;&#x3D;&#x3D; mockUser.email) {
+    return of(undefined).pipe(
+      delay(mockDelay),
+      switchMap(() &#x3D;&gt; throwError(new Error(&#x27;Email already exists&#x27;))),
+    );
+  }
+
+  return of({
+    jwt: &#x27;ey...&#x27;,
+    account: {
+      id: 43,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      firstName: input.firstName,
+      lastName: input.lastName,
+      email: input.email,
+      isConfirmed: false,
+    },
+  } as LoggedInUser).pipe(delay(mockDelay));
+}</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="resendConfirmationEmailForTest$"></a>
+                        <span class="name">
+                            <b>
+                            resendConfirmationEmailForTest$</b>
+                            <a href="#resendConfirmationEmailForTest$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>(): Observable&lt;{
+  isSuccess: boolean;
+}&gt; &#x3D;&gt; {
+  return of({ isSuccess: true }).pipe(delay(2000));
+}</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="resetPasswordForTest$"></a>
+                        <span class="name">
+                            <b>
+                            resetPasswordForTest$</b>
+                            <a href="#resetPasswordForTest$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>(
+  input: ResetPasswordDto,
+  id: number,
+  token: string,
+): Observable&lt;{ isProcessed: boolean }&gt; &#x3D;&gt; {
+  const isParamsCorrect &#x3D; id &#x3D;&#x3D;&#x3D; mockUser.id &amp;&amp; token &#x3D;&#x3D;&#x3D; validToken;
+  if (!isParamsCorrect) {
+    return of(undefined).pipe(
+      delay(mockDelay),
+      switchMap(() &#x3D;&gt; {
+        return throwError(new Error(AuthError.InvalidToken));
+      }),
+    );
+  }
+
+  return of({ isProcessed: true }).pipe(delay(mockDelay));
+}</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="validToken"></a>
+                        <span class="name">
+                            <b>
+                            validToken</b>
+                            <a href="#validToken"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;johndoe.test.token&#x27;</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>src/test.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="context"></a>
+                        <span class="name">
+                            <b>
+                            context</b>
+                            <a href="#context"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>require.context(&#x27;./&#x27;, true, /\.spec\.ts$/)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="require"></a>
+                        <span class="name">
+                            <b>
+                            require</b>
+                            <a href="#require"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>literal type</code>
+
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>src/app/shared/shared.module.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="directives"></a>
+                        <span class="name">
+                            <b>
+                            directives</b>
+                            <a href="#directives"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[ImageDefaultDirective]</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="materialModules"></a>
+                        <span class="name">
+                            <b>
+                            materialModules</b>
+                            <a href="#materialModules"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[
+  MatButtonModule,
+  MatCardModule,
+  MatDialogModule,
+  MatDividerModule,
+  MatFormFieldModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatSidenavModule,
+  MatSnackBarModule,
+  MatTabsModule,
+  MatTooltipModule,
+]</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="pipes"></a>
+                        <span class="name">
+                            <b>
+                            pipes</b>
+                            <a href="#pipes"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[ApiPathPipe]</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>src/environments/environment.prod.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="environment"></a>
+                        <span class="name">
+                            <b>
+                            environment</b>
+                            <a href="#environment"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+  production: true,
+  version: &#x60;v${packageJson.version}&#x60;,
+  /** set to &#x27;&#x27; empty string to enable mocked account */
+  apiUrl: &#x27;&#x27;,
+}</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>src/environments/environment.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="environment"></a>
+                        <span class="name">
+                            <b>
+                            environment</b>
+                            <a href="#environment"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+  production: false,
+  version: &#x60;(dev) v${packageJson.version}&#x60;,
+  /** set to &#x27;&#x27; empty string to enable mocked account */
+  apiUrl: &#x27;http://localhost:3000/api&#x27;,
+}</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'miscellaneous-variables';
+            var COMPODOC_CURRENT_PAGE_URL = 'variables.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

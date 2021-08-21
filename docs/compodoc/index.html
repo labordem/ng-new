@@ -1,0 +1,227 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ng-new documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	      <link rel="stylesheet" href="./styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="./" class="navbar-brand">ng-new documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<div align="center">
+<p><img src="https://angular.io/assets/images/logos/angular/angular.svg" height="152"></p>
+
+<p><a href="http://commitizen.github.io/cz-cli/"><img src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg" alt="Commitizen friendly" class="img-responsive"></a>
+<a href="http://conventional-changelog.github.io"><img src="https://img.shields.io/badge/changelog-conventional-brightgreen.svg" alt="Conventional Changelog" class="img-responsive"></a>
+<a href="https://github.com/conventional-changelog/standard-version"><img src="https://img.shields.io/badge/release-standard%20version-brightgreen.svg" alt="Standard Version" class="img-responsive"></a>
+<a href="https://github.com/prettier/prettier"><img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg" alt="code style: prettier" class="img-responsive"></a></p>
+<p><img src="https://img.shields.io/github/package-json/dependency-version/miaborde/ng-new/@angular/core?label=angular&logo=angular" alt="angular version" class="img-responsive"></p>
+<p><a href="https://miaborde.github.io/ng-new/en-US">demo (en-US)</a> - <a href="https://miaborde.github.io/ng-new/fr">demo (fr)</a> - <a href="https://miaborde.github.io/ng-new/compodoc">compodoc</a> - <a href="./CHANGELOG.md">changelog</a></p>
+</div>
+
+<h2 id="get-corresponding-backend">Get corresponding backend</h2>
+<p>If you want the full stack you can get corresponding API <a href="https://github.com/mIaborde/nest-new">here</a>.</p>
+<h2 id="run-it-in-development">Run it in development</h2>
+<h3 id="local-nodejs">Local Node.js</h3>
+<p>You can run this project in watch/debug mode in local dev environment, to do so you need <a href="https://nodejs.org">Node.js</a>.</p>
+<p><strong>Example :</strong></p>
+<div><pre class="line-numbers"><code class="language-bash"># install dependencies
+npm i
+# run in development mode, default language
+npm run start
+# run in development mode, in french
+npm run start:fr</code></pre></div><h3 id="vscode-debugger">VSCode debugger</h3>
+<p>If you use <a href="https://code.visualstudio.com/">Visual Studio Code</a> You can easily launch this app in debug mode, you need this <a href="https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome">extension</a> (automatically added if you accept recommended extensions), and Google Chrome. All settings are already done in <strong>.vscode</strong> folder. Follow this <a href="https://github.com/microsoft/vscode-recipes/tree/master/Angular-CLI">guide</a> to know more.</p>
+<blockquote>
+<p><strong>Use Chromium instead of Chrome on Linux distros</strong></p>
+<p>create an alias with this command : <code>sudo ln -s /usr/bin/chromium /usr/bin/google-chrome</code>, path can be different on your distro !</p>
+</blockquote>
+<h2 id="run-it-in-production">Run it in production</h2>
+<h3 id="containerized">Containerized</h3>
+<p>You can run this project in production mode in container, to do so you just need <a href="https://docs.docker.com/get-docker/">Docker</a>.</p>
+<p><strong>Example :</strong></p>
+<div><pre class="line-numbers"><code class="language-bash"># with docker only
+docker build --target production -t ng-new .
+docker run -p 80:8080 -p 443:443 --name ng-new ng-new
+
+# if you have Docker AND Node.js installed you can use short commands :
+npm run docker:build:prod
+npm run docker:prod</code></pre></div><h2 id="documentation">Documentation</h2>
+<ul>
+<li><strong>Code documentation:</strong> this project use <a href="https://compodoc.app/guides/getting-started.html">Compodoc</a> a documentation tool for Angular &amp; Nestjs applications. It generates a static documentation of your application.</li>
+</ul>
+<p><strong>Example :</strong></p>
+<div><pre class="line-numbers"><code class="language-bash"># code documentation: build doc website and open it
+npm run doc</code></pre></div><h2 id="git-flow">Git flow</h2>
+<p>This project respects <a href="https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit">Conventional commits</a>, a Git commit convention made by the Angular team. Basically, every pull request should end up with one commit and a standardized commit message.</p>
+<p>To easily respect this a tool is provided: <a href="https://github.com/commitizen/cz-cli">Commitizen</a> called with <code>npm run cz</code> command, you are not obligated to use it, if you make your commits manually they will be tested too.</p>
+<blockquote>
+<p><strong>Attention !</strong>
+Do not commit without a <strong>node_modules</strong> folder at the root of the project (run <code>npm i</code> command to get it), otherwise your commit and your code will not trigger <code>lint</code> / <code>format</code> / <code>cz</code> scripts.</p>
+</blockquote>
+<p><strong>Example :</strong></p>
+<div><pre class="line-numbers"><code class="language-bash"># add your changes
+git add .
+# commit with commitizen-cli
+npm run cz
+# push changes
+git push
+
+# if your commit fail you can perform changes and retry with previous message
+npm run cz -- --retry</code></pre></div><h2 id="create-a-release">Create a release</h2>
+<p>This project respects <a href="https://semver.org">Semantic Versioning</a>.
+To easily respect this specification a tool is provided: <a href="https://github.com/conventional-changelog/standard-version">Standard-version</a>.</p>
+<blockquote>
+<p><strong>Note:</strong> commit or stash any changes before create a release.
+<strong>Note:</strong> Semantic versioning works differently for versions starting with <code>v0.x.x</code>. Everything before <code>v1.0.0</code> is considered experimental and breaking changes are only minor version bumps. The moment you feel comfortable you need to bump the version manually to <code>v1.0.0</code> and then the well-known versioning kicks in where breaking changes bump the major version, features bump the minor and fixes bump the patch version.</p>
+</blockquote>
+<p><strong>Example :</strong></p>
+<div><pre class="line-numbers"><code class="language-bash"># add your changes
+git add .
+
+# release first version of the project (v0.0.0)
+npm run release -- --first-release
+# OR
+# release first stable version of the project (v1.0.0)
+npm run release -- --release-as 1.0.0
+# OR
+# perform a prerelease
+npm run release:prerelease
+# OR
+# perform a release
+npm run release
+
+# push your changes, WITH version tags
+git push --follow-tags</code></pre></div><blockquote>
+<p><strong>When you perform a release you automatically perform the following actions :</strong></p>
+<ul>
+<li>increment version number in <strong>package.json</strong> (uses the <code>fix:</code> and <code>feat:</code> tags to establish the semantic versioning)</li>
+<li>add a <a href="https://git-scm.com/book/en/v2/Git-Basics-Tagging">Git tag</a></li>
+<li>build project in prod mode for <a href="https://pages.github.com/">Github Pages</a> demos and <a href="#documentation">Documentation</a> in <strong>./docs</strong> folder</li>
+<li>create/update <a href="./CHANGELOG.md">CHANGELOG.md</a></li>
+<li>commit all staged changes with correct commit message</li>
+</ul>
+</blockquote>
+<h2 id="internationalization">Internationalization</h2>
+<p>This project is available in multiple languages, it implements <a href="https://angular.io/guide/i18n">Angular internationalization</a>. If you run it in containerized mode Nginx server redirects users to the correct version of the app, according to their browser language.</p>
+<p>When you add/modify/delete a localized string in project you have to update locale to generate new <strong>messages.xlf</strong> file and translate the new string in <strong>messages.{fr,others}.xlf</strong> file(s). To do this, it is advisable to use a translation software like <a href="https://poedit.net/">Poedit</a>.</p>
+<p><strong>Example :</strong></p>
+<div><pre class="line-numbers"><code class="language-bash"># update locale
+npm run locale</code></pre></div><blockquote>
+<p>When you update locale you automatically perform the following actions :</p>
+<ul>
+<li>update <strong>messages.xlf</strong> with angular built-in internationalization module</li>
+<li>merge <strong>messages.xlf</strong> and <strong>messages.fr.xlf</strong> using <a href="https://github.com/martinroob/ngx-i18nsupport-lib">ngx-i18nsupport-lib</a></li>
+</ul>
+</blockquote>
+<h2 id="performances-monitoring">Performances monitoring</h2>
+<ul>
+<li><p><strong>Source map explorer:</strong> determines which file each byte in your minified code came from. It shows you a treemap visualization to help you debug where all the code is coming from.</p>
+</li>
+<li><p><strong>Webdev measure:</strong> analyzes web apps and web pages, collecting modern performance metrics and insights on developer best practices. <a href="https://web.dev/measure/">Click here to check your app</a></p>
+</li>
+</ul>
+<p><strong>Example :</strong></p>
+<div><pre class="line-numbers"><code class="language-bash"># analyze your webpack bundle with source-map-explorer
+npm run analyze</code></pre></div><h2 id="make-it-yours">Make it yours</h2>
+<ul>
+<li>Clone this project and move into it</li>
+<li>Reset git history : <code>rm -rf .git &amp;&amp; git init</code></li>
+<li>Run <code>npm ci</code> after reset git history (important for pre-commit hooks)</li>
+<li>Replace ALL <code>ng-new</code> occurrence with your project name</li>
+<li>Replace ALL <code>miaborde</code> occurrence with your Github username</li>
+<li>Replace ALL <code>Angular progressive web app starter.</code> occurrence with your project description</li>
+<li>Change icons in <strong>assets</strong> folder, You can generate yours with <a href="https://www.npmjs.com/package/pwa-asset-generator">pwa-asset-generator</a></li>
+<li>You&#39;re good to go :)</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="./js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="./js/menu-wc.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

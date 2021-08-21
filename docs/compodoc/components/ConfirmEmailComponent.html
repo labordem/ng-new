@@ -1,0 +1,1022 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ng-new documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">ng-new documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>ConfirmEmailComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/auth/confirm-email/confirm-email.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                    <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+            <tr>
+                <td class="col-md-3">changeDetection</td>
+                <td class="col-md-9"><code>ChangeDetectionStrategy.OnPush</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-confirm-email</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./confirm-email.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./confirm-email.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#account">account</a>
+                            </li>
+                            <li>
+                                <a href="#isAccountAlreadyConfirmed">isAccountAlreadyConfirmed</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#isDestroyed$">isDestroyed$</a>
+                            </li>
+                            <li>
+                                <a href="#isLoading">isLoading</a>
+                            </li>
+                            <li>
+                                <a href="#isProcessing">isProcessing</a>
+                            </li>
+                            <li>
+                                <a href="#token">token</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnDestroy">ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onRequestConfirmEmail">onRequestConfirmEmail</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#verifyToken">verifyToken</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(activatedRoute: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, changeDetectorRef: <a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank">ChangeDetectorRef</a>, authService: <a href="../injectables/AuthService.html">AuthService</a>, userService: <a href="../injectables/UserService.html">UserService</a>, dialog: MatDialog, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/auth/confirm-email/confirm-email.component.ts:31</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>activatedRoute</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>changeDetectorRef</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank" >ChangeDetectorRef</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>authService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>userService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UserService.html" target="_self" >UserService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>dialog</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatDialog</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <b>
+                            ngOnDestroy
+                        </b>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="58"
+                            class="link-to-prism">src/app/auth/confirm-email/confirm-email.component.ts:58</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="42"
+                            class="link-to-prism">src/app/auth/confirm-email/confirm-email.component.ts:42</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onRequestConfirmEmail"></a>
+                    <span class="name">
+                        <b>
+                            onRequestConfirmEmail
+                        </b>
+                        <a href="#onRequestConfirmEmail"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onRequestConfirmEmail()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="63"
+                            class="link-to-prism">src/app/auth/confirm-email/confirm-email.component.ts:63</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Subscription</code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="verifyToken"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            verifyToken
+                        </b>
+                        <a href="#verifyToken"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>verifyToken(token: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="81"
+                            class="link-to-prism">src/app/auth/confirm-email/confirm-email.component.ts:81</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>token</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Subscription</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="account"></a>
+                        <span class="name">
+                            <b>
+                            account</b>
+                            <a href="#account"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/Account.html" target="_self" >Account | undefined</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>undefined</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/auth/confirm-email/confirm-email.component.ts:30</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isAccountAlreadyConfirmed"></a>
+                        <span class="name">
+                            <b>
+                            isAccountAlreadyConfirmed</b>
+                            <a href="#isAccountAlreadyConfirmed"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/auth/confirm-email/confirm-email.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isDestroyed$"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                                <span class="modifier">Readonly</span>
+                            isDestroyed$</b>
+                            <a href="#isDestroyed$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new Subject&lt;boolean&gt;()</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/auth/confirm-email/confirm-email.component.ts:31</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isLoading"></a>
+                        <span class="name">
+                            <b>
+                            isLoading</b>
+                            <a href="#isLoading"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/auth/confirm-email/confirm-email.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isProcessing"></a>
+                        <span class="name">
+                            <b>
+                            isProcessing</b>
+                            <a href="#isProcessing"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/auth/confirm-email/confirm-email.component.ts:27</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="token"></a>
+                        <span class="name">
+                            <b>
+                            token</b>
+                            <a href="#token"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>string | undefined</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>undefined</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/auth/confirm-email/confirm-email.component.ts:29</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  OnDestroy,
+  OnInit,
+} from &#x27;@angular/core&#x27;;
+import { MatDialog } from &#x27;@angular/material/dialog&#x27;;
+import { ActivatedRoute, Router } from &#x27;@angular/router&#x27;;
+import { Subject, Subscription } from &#x27;rxjs&#x27;;
+import { finalize, switchMap, takeUntil } from &#x27;rxjs/operators&#x27;;
+
+import { Account } from &#x27;../../core/models/user.model&#x27;;
+import { UserService } from &#x27;../../core/services/user.service&#x27;;
+import { AuthError } from &#x27;../auth.model&#x27;;
+import { AuthService } from &#x27;../auth.service&#x27;;
+import { ConfirmEmailDialogComponent } from &#x27;../confirm-email-dialog/confirm-email-dialog.component&#x27;;
+
+@Component({
+  selector: &#x27;app-confirm-email&#x27;,
+  templateUrl: &#x27;./confirm-email.component.html&#x27;,
+  styleUrls: [&#x27;./confirm-email.component.scss&#x27;],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+})
+export class ConfirmEmailComponent implements OnInit, OnDestroy {
+  isLoading &#x3D; false;
+  isProcessing &#x3D; false;
+  isAccountAlreadyConfirmed &#x3D; false;
+  token: string | undefined &#x3D; undefined;
+  account: Account | undefined &#x3D; undefined;
+  private readonly isDestroyed$ &#x3D; new Subject&lt;boolean&gt;();
+
+  constructor(
+    private readonly activatedRoute: ActivatedRoute,
+    private readonly changeDetectorRef: ChangeDetectorRef,
+    private readonly authService: AuthService,
+    private readonly userService: UserService,
+    private readonly dialog: MatDialog,
+    private readonly router: Router,
+  ) {}
+
+  ngOnInit(): void {
+    this.userService.account$
+      .pipe(takeUntil(this.isDestroyed$))
+      .subscribe((account) &#x3D;&gt; {
+        this.isAccountAlreadyConfirmed &#x3D; account?.isConfirmed ?? false;
+
+        this.token &#x3D;
+          this.activatedRoute.snapshot.paramMap.get(&#x27;token&#x27;) ?? undefined;
+
+        return this.token &#x3D;&#x3D;&#x3D; undefined
+          ? undefined
+          : this.verifyToken(this.token);
+      })
+      .unsubscribe();
+  }
+
+  ngOnDestroy(): void {
+    this.isDestroyed$.next(true);
+    this.isDestroyed$.complete();
+  }
+
+  onRequestConfirmEmail(): Subscription {
+    this.isProcessing &#x3D; true;
+
+    return this.userService.account$
+      .pipe(
+        switchMap((account) &#x3D;&gt;
+          this.authService.resendConfirmationEmail$(
+            (account as Account)?.email,
+          ),
+        ),
+        switchMap((res) &#x3D;&gt;
+          this.dialog.open(ConfirmEmailDialogComponent).afterClosed(),
+        ),
+        takeUntil(this.isDestroyed$),
+      )
+      .subscribe((afterClosed) &#x3D;&gt; this.router.navigate([&#x27;/&#x27;]));
+  }
+
+  private verifyToken(token: string): Subscription {
+    this.isAccountAlreadyConfirmed &#x3D; false;
+    this.isLoading &#x3D; true;
+
+    return this.authService
+      .confirmEmail$(token)
+      .pipe(
+        finalize(() &#x3D;&gt; {
+          this.isLoading &#x3D; false;
+          this.changeDetectorRef.detectChanges();
+        }),
+        takeUntil(this.isDestroyed$),
+      )
+      .subscribe(
+        (loggedInUser) &#x3D;&gt; {
+          this.account &#x3D; loggedInUser.account;
+          this.changeDetectorRef.detectChanges();
+        },
+        (err) &#x3D;&gt; {
+          if ((err as Error)?.message &#x3D;&#x3D;&#x3D; AuthError.EmailConfirmed) {
+            this.isAccountAlreadyConfirmed &#x3D; true;
+            this.changeDetectorRef.detectChanges();
+          }
+        },
+      );
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;section class&#x3D;&quot;centred&quot;&gt;
+  &lt;mat-card *ngIf&#x3D;&quot;!isLoading; else loadingTemplate&quot; class&#x3D;&quot;card-alone&quot;&gt;
+    &lt;ng-container
+      *ngIf&#x3D;&quot;!isAccountAlreadyConfirmed; else alreadyConfirmedEmailTemplate&quot;
+    &gt;
+      &lt;ng-container *ngIf&#x3D;&quot;token; else emailNotConfirmedTemplate&quot;&gt;
+        &lt;ng-container
+          *ngIf&#x3D;&quot;
+            account?.isConfirmed;
+            then emailConfirmedTemplate;
+            else emailConfirmErrorTemplate
+          &quot;
+        &gt;
+        &lt;/ng-container&gt;
+      &lt;/ng-container&gt;
+    &lt;/ng-container&gt;
+  &lt;/mat-card&gt;
+&lt;/section&gt;
+
+&lt;ng-template #loadingTemplate&gt;
+  &lt;mat-spinner color&#x3D;&quot;accent&quot; diameter&#x3D;&quot;60&quot; class&#x3D;&quot;m-16&quot;&gt;&lt;/mat-spinner&gt;
+&lt;/ng-template&gt;
+
+&lt;ng-template #emailConfirmedTemplate&gt;
+  &lt;div class&#x3D;&quot;center pb-16&quot;&gt;
+    &lt;mat-icon class&#x3D;&quot;status-icon&quot;&gt;done&lt;/mat-icon&gt;
+  &lt;/div&gt;
+  &lt;p i18n&gt;Welcome {{ account!.firstName }} ! Your are now a confirmed user !&lt;/p&gt;
+  &lt;div class&#x3D;&quot;button-group mt-16&quot;&gt;
+    &lt;span class&#x3D;&quot;fill-remain-space&quot;&gt;&lt;/span&gt;
+    &lt;button mat-raised-button class&#x3D;&quot;rounded&quot; color&#x3D;&quot;accent&quot; routerLink&#x3D;&quot;/&quot; i18n
+      &gt;Continue&lt;/button
+    &gt;
+  &lt;/div&gt;
+&lt;/ng-template&gt;
+
+&lt;ng-template #emailNotConfirmedTemplate&gt;
+  &lt;div class&#x3D;&quot;center pb-16&quot;&gt;
+    &lt;mat-icon class&#x3D;&quot;status-icon&quot;&gt;error_outline&lt;/mat-icon&gt;
+  &lt;/div&gt;
+  &lt;p i18n
+    &gt;You have not confirmed your email address, verify your inbox and click on
+    the link in the email to continue.&lt;/p
+  &gt;
+  &lt;p i18n
+    &gt;You can request a new verification link if the old one has expired.&lt;/p
+  &gt;
+  &lt;div class&#x3D;&quot;button-group mt-16&quot;&gt;
+    &lt;mat-progress-bar
+      *ngIf&#x3D;&quot;isProcessing&quot;
+      mode&#x3D;&quot;indeterminate&quot;
+      color&#x3D;&quot;accent&quot;
+      class&#x3D;&quot;mt-16&quot;
+    &gt;&lt;/mat-progress-bar&gt;
+
+    &lt;span class&#x3D;&quot;fill-remaining-space&quot;&gt;&lt;/span&gt;
+
+    &lt;button
+      *ngIf&#x3D;&quot;!isProcessing&quot;
+      mat-raised-button
+      class&#x3D;&quot;icon-after rounded&quot;
+      color&#x3D;&quot;accent&quot;
+      (click)&#x3D;&quot;onRequestConfirmEmail()&quot;
+    &gt;
+      &lt;span i18n&gt;Resend&lt;/span&gt;
+      &lt;mat-icon&gt;send&lt;/mat-icon&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/ng-template&gt;
+
+&lt;ng-template #emailConfirmErrorTemplate&gt;
+  &lt;div class&#x3D;&quot;center pb-16&quot;&gt;
+    &lt;mat-icon class&#x3D;&quot;status-icon&quot;&gt;error_outline&lt;/mat-icon&gt;
+  &lt;/div&gt;
+  &lt;p i18n class&#x3D;&quot;center&quot;&gt;Could not confirm your address.&lt;/p&gt;
+  &lt;p i18n
+    &gt;You can request a new verification link if the old one has expired.&lt;/p
+  &gt;
+  &lt;div class&#x3D;&quot;button-group mt-16&quot;&gt;
+    &lt;mat-progress-bar
+      *ngIf&#x3D;&quot;isProcessing&quot;
+      mode&#x3D;&quot;indeterminate&quot;
+      color&#x3D;&quot;accent&quot;
+      class&#x3D;&quot;mt-16&quot;
+    &gt;&lt;/mat-progress-bar&gt;
+
+    &lt;span class&#x3D;&quot;fill-remaining-space&quot;&gt;&lt;/span&gt;
+
+    &lt;button
+      *ngIf&#x3D;&quot;!isProcessing&quot;
+      mat-raised-button
+      class&#x3D;&quot;icon-after rounded&quot;
+      color&#x3D;&quot;accent&quot;
+      (click)&#x3D;&quot;onRequestConfirmEmail()&quot;
+    &gt;
+      &lt;span i18n&gt;Resend&lt;/span&gt;
+      &lt;mat-icon&gt;send&lt;/mat-icon&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/ng-template&gt;
+
+&lt;ng-template #alreadyConfirmedEmailTemplate&gt;
+  &lt;div class&#x3D;&quot;center pb-16&quot;&gt;
+    &lt;mat-icon class&#x3D;&quot;status-icon&quot;&gt;done&lt;/mat-icon&gt;
+  &lt;/div&gt;
+  &lt;p i18n&gt;Everything is ready, your email address has already been verified.&lt;/p&gt;
+  &lt;div class&#x3D;&quot;button-group mt-16&quot;&gt;
+    &lt;span class&#x3D;&quot;fill-remain-space&quot;&gt;&lt;/span&gt;
+    &lt;button mat-raised-button color&#x3D;&quot;accent&quot; class&#x3D;&quot;rounded&quot; routerLink&#x3D;&quot;/&quot; i18n
+      &gt;Continue&lt;/button
+    &gt;
+  &lt;/div&gt;
+&lt;/ng-template&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./confirm-email.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.button-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.status-icon {
+  font-size: 75px;
+  height: 75px;
+  width: 75px;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><section class="centred">  <mat-card *ngIf="!isLoading; else loadingTemplate" class="card-alone">    <ng-container      *ngIf="!isAccountAlreadyConfirmed; else alreadyConfirmedEmailTemplate"    >      <ng-container *ngIf="token; else emailNotConfirmedTemplate">        <ng-container          *ngIf="            account?.isConfirmed;            then emailConfirmedTemplate;            else emailConfirmErrorTemplate          "        >        </ng-container>      </ng-container>    </ng-container>  </mat-card></section><ng-template #loadingTemplate>  <mat-spinner color="accent" diameter="60" class="m-16"></mat-spinner></ng-template><ng-template #emailConfirmedTemplate>  <div class="center pb-16">    <mat-icon class="status-icon">done</mat-icon>  </div>  <p i18n>Welcome {{ account!.firstName }} ! Your are now a confirmed user !</p>  <div class="button-group mt-16">    <span class="fill-remain-space"></span>    <button mat-raised-button class="rounded" color="accent" routerLink="/" i18n      >Continue</button    >  </div></ng-template><ng-template #emailNotConfirmedTemplate>  <div class="center pb-16">    <mat-icon class="status-icon">error_outline</mat-icon>  </div>  <p i18n    >You have not confirmed your email address, verify your inbox and click on    the link in the email to continue.</p  >  <p i18n    >You can request a new verification link if the old one has expired.</p  >  <div class="button-group mt-16">    <mat-progress-bar      *ngIf="isProcessing"      mode="indeterminate"      color="accent"      class="mt-16"    ></mat-progress-bar>    <span class="fill-remaining-space"></span>    <button      *ngIf="!isProcessing"      mat-raised-button      class="icon-after rounded"      color="accent"      (click)="onRequestConfirmEmail()"    >      <span i18n>Resend</span>      <mat-icon>send</mat-icon>    </button>  </div></ng-template><ng-template #emailConfirmErrorTemplate>  <div class="center pb-16">    <mat-icon class="status-icon">error_outline</mat-icon>  </div>  <p i18n class="center">Could not confirm your address.</p>  <p i18n    >You can request a new verification link if the old one has expired.</p  >  <div class="button-group mt-16">    <mat-progress-bar      *ngIf="isProcessing"      mode="indeterminate"      color="accent"      class="mt-16"    ></mat-progress-bar>    <span class="fill-remaining-space"></span>    <button      *ngIf="!isProcessing"      mat-raised-button      class="icon-after rounded"      color="accent"      (click)="onRequestConfirmEmail()"    >      <span i18n>Resend</span>      <mat-icon>send</mat-icon>    </button>  </div></ng-template><ng-template #alreadyConfirmedEmailTemplate>  <div class="center pb-16">    <mat-icon class="status-icon">done</mat-icon>  </div>  <p i18n>Everything is ready, your email address has already been verified.</p>  <div class="button-group mt-16">    <span class="fill-remain-space"></span>    <button mat-raised-button color="accent" class="rounded" routerLink="/" i18n      >Continue</button    >  </div></ng-template></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArticleComponent', 'selector': 'app-article'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'ConfirmEmailComponent', 'selector': 'app-confirm-email'},{'name': 'ConfirmEmailDialogComponent', 'selector': 'app-confirm-email-dialog'},{'name': 'ForgotPasswordComponent', 'selector': 'app-forgot-password'},{'name': 'ForgotPasswordDialogComponent', 'selector': 'app-forgot-password-dialog'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LayoutFooterComponent', 'selector': 'app-layout-footer'},{'name': 'LayoutNavComponent', 'selector': 'app-layout-nav'},{'name': 'LayoutSettingsComponent', 'selector': 'app-layout-settings'},{'name': 'LayoutSidenavComponent', 'selector': 'app-layout-sidenav'},{'name': 'LoginFormComponent', 'selector': 'app-login-form'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'RegisterFormComponent', 'selector': 'app-register-form'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'}];
+    var DIRECTIVES = [{'name': 'ImageDefaultDirective', 'selector': 'img[default]'}];
+    var ACTUAL_COMPONENT = {'name': 'ConfirmEmailComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ConfirmEmailComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
