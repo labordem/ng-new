@@ -92,10 +92,14 @@
             "production": {
               "browserTarget": "ng-new:build:production"
             },
+            "development": {
+              "browserTarget": "ng-new:build:development,en-US"
+            },
             "fr": {
               "browserTarget": "ng-new:build:fr"
             }
-          }
+          },
+          "defaultConfiguration": "development"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
