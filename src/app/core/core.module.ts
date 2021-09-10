@@ -38,14 +38,14 @@ import { LayoutComponent } from './layout/layout.component';
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: HttpJwtInterceptor,
+      useClass: HttpErrorInterceptor,
       multi: true,
     },
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: HttpErrorInterceptor,
+      useClass: HttpJwtInterceptor,
       multi: true,
-    },
+    }
   ],
 })
 export class CoreModule {}
