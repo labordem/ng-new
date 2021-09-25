@@ -9,7 +9,7 @@ export const environment = {
   production: false,
   version: `(dev) v${packageJson.version}`,
   /** set to '' empty string to enable mocked account */
-  apiUrl: 'http://localhost:3000/api',
+  apiUrl: 'https://localhost/api',
 };
 
 /*

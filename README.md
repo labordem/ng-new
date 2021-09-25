@@ -12,9 +12,19 @@
 
 </div>
 
-## Get corresponding backend
+## Make it yours
 
-If you want the full stack you can get corresponding API [here](https://github.com/mIaborde/nest-new).
+- Clone this project and move into it
+- Reset git history : `rm -rf .git && git init`
+- Run `npm ci` after reset git history (important for pre-commit hooks)
+- Replace ALL `ng-new` occurrence with your project name
+- Replace ALL `Angular progressive web app starter.` occurrence with your project description
+- Replace ALL `miaborde` occurrence with your Github username
+- Change icons in **assets** folder, You can generate yours with [pwa-asset-generator](https://www.npmjs.com/package/pwa-asset-generator)
+- If you not using Firebase you can delete all related files : `rm -r *firebase* .firebase*`
+- You're good to go :)
+
+> If you want the full stack you can get corresponding API [here](https://github.com/mIaborde/nest-new).
 
 ## Run it in development
 
@@ -32,6 +42,24 @@ npm run start
 # run in development mode, in french
 npm run start:fr
 ```
+
+### Containerized
+
+You can run this project in watch/debug mode in fully containerized environment, to do so you just need [Docker](https://docs.docker.com/get-docker/) (for linux users you also need [Docker-compose](https://docs.docker.com/compose/install/)).
+
+**Example :**
+
+```bash
+# with docker only
+docker-compose -f docker-compose.dev.yml build
+docker-compose -f docker-compose.dev.yml up
+
+# if you have Docker AND Node.js installed you can use short commands :
+npm run docker:build
+npm run docker
+```
+
+> When you add a npm package to your project you need to force your container to build.
 
 ### VSCode debugger
 
@@ -51,8 +79,8 @@ You can run this project in production mode in container, to do so you just need
 
 ```bash
 # with docker only
-docker build --target production -t ng-new .
-docker run -p 80:8080 -p 443:443 --name ng-new ng-new
+docker-compose -f docker-compose.prod.yml build
+docker-compose -f docker-compose.prod.yml up
 
 # if you have Docker AND Node.js installed you can use short commands :
 npm run docker:build:prod
