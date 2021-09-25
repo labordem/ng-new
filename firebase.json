@@ -1,0 +1,19 @@
+{
+  "hosting": {
+    "public": "dist/ng-new",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      {
+        "source": "/en-US{,/**}",
+        "destination": "/en-US/index.html"
+      },
+      {
+        "source": "/fr{,/**}",
+        "destination": "/fr/index.html"
+      }
+    ],
+    "i18n": {
+      "root": "/"
+    }
+  }
+}

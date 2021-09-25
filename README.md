@@ -190,13 +190,9 @@ npm run locale
 npm run analyze
 ```
 
-## Make it yours
+## Deploy it
 
-- Clone this project and move into it
-- Reset git history : `rm -rf .git && git init`
-- Run `npm ci` after reset git history (important for pre-commit hooks)
-- Replace ALL `ng-new` occurrence with your project name
-- Replace ALL `miaborde` occurrence with your Github username
-- Replace ALL `Angular progressive web app starter.` occurrence with your project description
-- Change icons in **assets** folder, You can generate yours with [pwa-asset-generator](https://www.npmjs.com/package/pwa-asset-generator)
-- You're good to go :)
+### Firebase
+
+- Login to your Firebase account if needed : `npm i -g firebase-tools && firebase login`
+- I18n configuration is already done in **firebase.json**, you just have to rename your project in **.firebaserc** and deploy with : `firebase deploy`

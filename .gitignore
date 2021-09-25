@@ -3,6 +3,7 @@
 # environment
 .env
 /pgdata
+/.firebase
 
 # compiled output
 /dist
