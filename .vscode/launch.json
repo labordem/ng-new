@@ -3,7 +3,7 @@
   "configurations": [
     {
       "name": "start",
-      "type": "chrome",
+      "type": "pwa-chrome",
       "request": "launch",
       "preLaunchTask": "npm: start",
       "url": "http://localhost:4200/#",
@@ -17,8 +17,23 @@
       }
     },
     {
+      "name": "attach",
+      "type": "pwa-chrome",
+      "request": "attach",
+      "url": "http://localhost:4200/#",
+      "webRoot": "${workspaceFolder}",
+      "sourceMapPathOverrides": {
+        "webpack:/*": "${webRoot}/*",
+        "/./*": "${webRoot}/*",
+        "/src/*": "${webRoot}/*",
+        "/*": "*",
+        "/./~/*": "${webRoot}/node_modules/*"
+      },
+      "port": 9222
+    },
+    {
       "name": "test",
-      "type": "chrome",
+      "type": "pwa-chrome",
       "request": "launch",
       "url": "http://localhost:9876/debug.html",
       "webRoot": "${workspaceFolder}",
@@ -33,7 +48,7 @@
     },
     {
       "name": "e2e",
-      "type": "node",
+      "type": "pwa-node",
       "request": "launch",
       "program": "${workspaceFolder}/node_modules/protractor/bin/protractor",
       "protocol": "inspector",

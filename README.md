@@ -63,9 +63,12 @@ npm run docker
 
 ### VSCode debugger
 
-If you use [Visual Studio Code](https://code.visualstudio.com/) You can easily launch this app in debug mode, you need this [extension](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) (automatically added if you accept recommended extensions), and Google Chrome. All settings are already done in **.vscode** folder. Follow this [guide](https://github.com/microsoft/vscode-recipes/tree/master/Angular-CLI) to know more.
+With [Visual Studio Code](https://code.visualstudio.com/) you can easily launch this app in debug mode, you just need Google Chrome. All settings are already done in **.vscode** folder. Follow this [guide](https://github.com/microsoft/vscode-recipes/tree/master/Angular-CLI) to know more.
 
-> **Use Chromium instead of Chrome on Linux distros**
+> **If you want to 'attach' debugger**
+> You need to open your Chrome instance with `chrome --remote-debugging-port=9222`
+
+> **If you want Chromium instead of Chrome on Linux distros**
 >
 > create an alias with this command : `sudo ln -s /usr/bin/chromium /usr/bin/google-chrome`, path can be different on your distro !
 
