@@ -332,14 +332,14 @@ import { LayoutComponent } from &#x27;./layout/layout.component&#x27;;
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: HttpJwtInterceptor,
+      useClass: HttpErrorInterceptor,
       multi: true,
     },
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: HttpErrorInterceptor,
+      useClass: HttpJwtInterceptor,
       multi: true,
-    },
+    }
   ],
 })
 export class CoreModule {}

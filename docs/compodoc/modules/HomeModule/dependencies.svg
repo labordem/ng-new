@@ -24,43 +24,43 @@
 <title>cluster_HomeModule</title>
 <polygon fill="none" stroke="black" stroke-dasharray="1,5" points="113,-70 113,-195 383,-195 383,-70 113,-70"/>
 </g>
-<g id="clust2" class="cluster">
-<title>cluster_HomeModule_declarations</title>
-<polygon fill="none" stroke="black" points="243,-78 243,-130 375,-130 375,-78 243,-78"/>
-</g>
 <g id="clust4" class="cluster">
 <title>cluster_HomeModule_imports</title>
-<polygon fill="none" stroke="black" points="121,-78 121,-130 235,-130 235,-78 121,-78"/>
+<polygon fill="none" stroke="black" points="261,-78 261,-130 375,-130 375,-78 261,-78"/>
+</g>
+<g id="clust2" class="cluster">
+<title>cluster_HomeModule_declarations</title>
+<polygon fill="none" stroke="black" points="121,-78 121,-130 253,-130 253,-78 121,-78"/>
 </g>
 <!-- HomeComponent -->
 <g id="node1" class="node">
 <title>HomeComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="366.55,-122 251.45,-122 251.45,-86 366.55,-86 366.55,-122"/>
-<text text-anchor="middle" x="309" y="-99.8" font-family="Times,serif" font-size="14.00">HomeComponent</text>
+<polygon fill="#ffffb3" stroke="black" points="244.55,-122 129.45,-122 129.45,-86 244.55,-86 244.55,-122"/>
+<text text-anchor="middle" x="187" y="-99.8" font-family="Times,serif" font-size="14.00">HomeComponent</text>
 </g>
 <!-- HomeModule -->
 <g id="node2" class="node">
 <title>HomeModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="289.76,-187 286.76,-191 265.76,-191 262.76,-187 196.24,-187 196.24,-151 289.76,-151 289.76,-187"/>
-<text text-anchor="middle" x="243" y="-164.8" font-family="Times,serif" font-size="14.00">HomeModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="298.76,-187 295.76,-191 274.76,-191 271.76,-187 205.24,-187 205.24,-151 298.76,-151 298.76,-187"/>
+<text text-anchor="middle" x="252" y="-164.8" font-family="Times,serif" font-size="14.00">HomeModule</text>
 </g>
 <!-- HomeComponent&#45;&gt;HomeModule -->
 <g id="edge1" class="edge">
 <title>HomeComponent&#45;&gt;HomeModule</title>
-<path fill="none" stroke="black" d="M270.55,-122.11C270.55,-122.11 270.55,-140.99 270.55,-140.99"/>
-<polygon fill="black" stroke="black" points="267.05,-140.99 270.55,-150.99 274.05,-140.99 267.05,-140.99"/>
+<path fill="none" stroke="black" d="M224.95,-122.11C224.95,-122.11 224.95,-140.99 224.95,-140.99"/>
+<polygon fill="black" stroke="black" points="221.45,-140.99 224.95,-150.99 228.45,-140.99 221.45,-140.99"/>
 </g>
 <!-- SharedModule -->
 <g id="node3" class="node">
 <title>SharedModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="227.42,-122 224.42,-126 203.42,-126 200.42,-122 128.58,-122 128.58,-86 227.42,-86 227.42,-122"/>
-<text text-anchor="middle" x="178" y="-99.8" font-family="Times,serif" font-size="14.00">SharedModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="367.42,-122 364.42,-126 343.42,-126 340.42,-122 268.58,-122 268.58,-86 367.42,-86 367.42,-122"/>
+<text text-anchor="middle" x="318" y="-99.8" font-family="Times,serif" font-size="14.00">SharedModule</text>
 </g>
 <!-- SharedModule&#45;&gt;HomeModule -->
 <g id="edge2" class="edge">
 <title>SharedModule&#45;&gt;HomeModule</title>
-<path fill="none" stroke="black" d="M211.67,-122.11C211.67,-122.11 211.67,-140.99 211.67,-140.99"/>
-<polygon fill="black" stroke="black" points="208.17,-140.99 211.67,-150.99 215.17,-140.99 208.17,-140.99"/>
+<path fill="none" stroke="black" d="M283.83,-122.11C283.83,-122.11 283.83,-140.99 283.83,-140.99"/>
+<polygon fill="black" stroke="black" points="280.33,-140.99 283.83,-150.99 287.33,-140.99 280.33,-140.99"/>
 </g>
 </g>
 </svg>

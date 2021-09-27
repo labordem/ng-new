@@ -41,8 +41,21 @@
 <p><a href="https://miaborde.github.io/ng-new/en-US">demo (en-US)</a> - <a href="https://miaborde.github.io/ng-new/fr">demo (fr)</a> - <a href="https://miaborde.github.io/ng-new/compodoc">compodoc</a> - <a href="./CHANGELOG.md">changelog</a></p>
 </div>
 
-<h2 id="get-corresponding-backend">Get corresponding backend</h2>
+<h2 id="make-it-yours">Make it yours</h2>
+<ul>
+<li>Clone this project and move into it</li>
+<li>Reset git history : <code>rm -rf .git &amp;&amp; git init</code></li>
+<li>Run <code>npm ci</code> after reset git history (important for pre-commit hooks)</li>
+<li>Replace ALL <code>ng-new</code> occurrence with your project name</li>
+<li>Replace ALL <code>Angular progressive web app starter.</code> occurrence with your project description</li>
+<li>Replace ALL <code>miaborde</code> occurrence with your Github username</li>
+<li>Change icons in <strong>assets</strong> folder, You can generate yours with <a href="https://www.npmjs.com/package/pwa-asset-generator">pwa-asset-generator</a></li>
+<li>If you not using Firebase you can delete all related files : <code>rm -r *firebase* .firebase*</code></li>
+<li>You&#39;re good to go :)</li>
+</ul>
+<blockquote>
 <p>If you want the full stack you can get corresponding API <a href="https://github.com/mIaborde/nest-new">here</a>.</p>
+</blockquote>
 <h2 id="run-it-in-development">Run it in development</h2>
 <h3 id="local-nodejs">Local Node.js</h3>
 <p>You can run this project in watch/debug mode in local dev environment, to do so you need <a href="https://nodejs.org">Node.js</a>.</p>
@@ -52,19 +65,35 @@ npm i
 # run in development mode, default language
 npm run start
 # run in development mode, in french
-npm run start:fr</code></pre></div><h3 id="vscode-debugger">VSCode debugger</h3>
-<p>If you use <a href="https://code.visualstudio.com/">Visual Studio Code</a> You can easily launch this app in debug mode, you need this <a href="https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome">extension</a> (automatically added if you accept recommended extensions), and Google Chrome. All settings are already done in <strong>.vscode</strong> folder. Follow this <a href="https://github.com/microsoft/vscode-recipes/tree/master/Angular-CLI">guide</a> to know more.</p>
+npm run start:fr</code></pre></div><h3 id="containerized">Containerized</h3>
+<p>You can run this project in watch/debug mode in fully containerized environment, to do so you just need <a href="https://docs.docker.com/get-docker/">Docker</a> (for linux users you also need <a href="https://docs.docker.com/compose/install/">Docker-compose</a>).</p>
+<p><strong>Example :</strong></p>
+<div><pre class="line-numbers"><code class="language-bash"># with docker only
+docker-compose -f docker-compose.dev.yml build
+docker-compose -f docker-compose.dev.yml up
+
+# if you have Docker AND Node.js installed you can use short commands :
+npm run docker:build
+npm run docker</code></pre></div><blockquote>
+<p>When you add a npm package to your project you need to force your container to build.</p>
+</blockquote>
+<h3 id="vscode-debugger">VSCode debugger</h3>
+<p>With <a href="https://code.visualstudio.com/">Visual Studio Code</a> you can easily launch this app in debug mode, you just need Google Chrome. All settings are already done in <strong>.vscode</strong> folder. Follow this <a href="https://github.com/microsoft/vscode-recipes/tree/master/Angular-CLI">guide</a> to know more.</p>
 <blockquote>
-<p><strong>Use Chromium instead of Chrome on Linux distros</strong></p>
+<p><strong>If you want to &#39;attach&#39; debugger</strong>
+You need to open your Chrome instance with <code>chrome --remote-debugging-port=9222</code></p>
+</blockquote>
+<blockquote>
+<p><strong>If you want Chromium instead of Chrome on Linux distros</strong></p>
 <p>create an alias with this command : <code>sudo ln -s /usr/bin/chromium /usr/bin/google-chrome</code>, path can be different on your distro !</p>
 </blockquote>
 <h2 id="run-it-in-production">Run it in production</h2>
-<h3 id="containerized">Containerized</h3>
+<h3 id="containerized-1">Containerized</h3>
 <p>You can run this project in production mode in container, to do so you just need <a href="https://docs.docker.com/get-docker/">Docker</a>.</p>
 <p><strong>Example :</strong></p>
 <div><pre class="line-numbers"><code class="language-bash"># with docker only
-docker build --target production -t ng-new .
-docker run -p 80:8080 -p 443:443 --name ng-new ng-new
+docker-compose -f docker-compose.prod.yml build
+docker-compose -f docker-compose.prod.yml up
 
 # if you have Docker AND Node.js installed you can use short commands :
 npm run docker:build:prod
@@ -145,16 +174,11 @@ npm run locale</code></pre></div><blockquote>
 </ul>
 <p><strong>Example :</strong></p>
 <div><pre class="line-numbers"><code class="language-bash"># analyze your webpack bundle with source-map-explorer
-npm run analyze</code></pre></div><h2 id="make-it-yours">Make it yours</h2>
+npm run analyze</code></pre></div><h2 id="deploy-it">Deploy it</h2>
+<h3 id="firebase">Firebase</h3>
 <ul>
-<li>Clone this project and move into it</li>
-<li>Reset git history : <code>rm -rf .git &amp;&amp; git init</code></li>
-<li>Run <code>npm ci</code> after reset git history (important for pre-commit hooks)</li>
-<li>Replace ALL <code>ng-new</code> occurrence with your project name</li>
-<li>Replace ALL <code>miaborde</code> occurrence with your Github username</li>
-<li>Replace ALL <code>Angular progressive web app starter.</code> occurrence with your project description</li>
-<li>Change icons in <strong>assets</strong> folder, You can generate yours with <a href="https://www.npmjs.com/package/pwa-asset-generator">pwa-asset-generator</a></li>
-<li>You&#39;re good to go :)</li>
+<li>Login to your Firebase account if needed : <code>npm i -g firebase-tools &amp;&amp; firebase login</code></li>
+<li>I18n configuration is already done in <strong>firebase.json</strong>, you just have to rename your project in <strong>.firebaserc</strong> and deploy with : <code>firebase deploy</code></li>
 </ul>
 
 
