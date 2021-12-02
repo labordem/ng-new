@@ -6,5 +6,6 @@
 /dist
 /docs
 .dockerignore
+.eslintcache
 Dockerfile
 docker-compose*.yml
