@@ -72,14 +72,14 @@ export class RegisterFormComponent implements OnInit, OnDestroy {
         password: this.f.password?.value as string,
       })
       .pipe(
-        switchMap((res) =>
+        switchMap(() =>
           this.dialog.open(ConfirmEmailDialogComponent).afterClosed(),
         ),
         takeUntil(this.isDestroyed$),
       )
       .subscribe(
-        (afterClosed) => this.router.navigate(['/']),
-        (err) => {
+        () => this.router.navigate(['/']),
+        (err: unknown) => {
           this.errorHappens.emit((err as ApiError).message);
           this.errorMessage = (err as ApiError).message;
           this.isLoading = false;
@@ -98,7 +98,6 @@ export class RegisterFormComponent implements OnInit, OnDestroy {
     updateOn: 'submit' | 'change',
     previousValue?: { [key: string]: unknown },
   ): FormGroup {
-    // tslint:disable
     const formGroup = this.formBuilder.group(
       {
         firstName: [null, [Validators.required]],
@@ -117,7 +116,6 @@ export class RegisterFormComponent implements OnInit, OnDestroy {
           this.mustNotBeRejectedValidator(),
         ],
       },
-      // tslint:enable
     );
 
     if (previousValue !== undefined) {

@@ -8,14 +8,13 @@ import { Directive, HostBinding, HostListener, Input } from '@angular/core';
  * <img src="yourSource" default="avatar" .../>
  */
 @Directive({
-  // tslint:disable-next-line: directive-selector
+  // eslint-disable-next-line @angular-eslint/directive-selector
   selector: 'img[default]',
 })
 export class ImageDefaultDirective {
   @Input() default!: 'profile' | 'landscape';
   @HostBinding('src') @Input() src?: string;
 
-  // tslint:disable-next-line: no-unsafe-any
   @HostListener('error') onError(): void {
     const isSourceFilled = this.src !== undefined && this.src !== '';
     this.src = isSourceFilled

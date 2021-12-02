@@ -2,7 +2,6 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-// tslint:disable-next-line: no-default-import
 import packageJson from '../../package.json';
 
 export const environment = {

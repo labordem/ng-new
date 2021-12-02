@@ -5,7 +5,6 @@ import { switchMap, take, tap } from 'rxjs/operators';
 
 import { environment } from '../../environments/environment';
 import { UserService } from '../core/services/user.service';
-
 import {
   confirmEmailForTest$,
   forgotPasswordForTest$,

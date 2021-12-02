@@ -17,7 +17,7 @@ export class UserGuard implements CanActivate {
   ) {}
 
   canActivate(): Observable<boolean | UrlTree> {
-    const jwt = this.userService.jwt;
+    const { jwt } = this.userService;
 
     return this.userService.account$.pipe(
       map((account) => {

@@ -66,8 +66,8 @@ export class LoginFormComponent implements OnInit, OnDestroy {
       })
       .pipe(takeUntil(this.isDestroyed$))
       .subscribe(
-        (res) => this.router.navigate(['/']),
-        (err) => {
+        () => this.router.navigate(['/']),
+        (err: unknown) => {
           this.errorHappens.emit((err as Error).message);
           this.errorMessage = (err as Error).message;
           this.isLoading = false;
@@ -80,7 +80,6 @@ export class LoginFormComponent implements OnInit, OnDestroy {
     updateOn: 'submit' | 'change',
     previousValue?: { [key: string]: unknown },
   ): FormGroup {
-    // tslint:disable
     const formGroup = this.formBuilder.group(
       {
         identifier: [undefined, [Validators.required, Validators.email]],
@@ -90,7 +89,6 @@ export class LoginFormComponent implements OnInit, OnDestroy {
         updateOn,
         validators: this.mustNotBeRejectedValidator(),
       },
-      // tslint:enable
     );
     if (previousValue !== undefined) {
       formGroup.setValue(previousValue);

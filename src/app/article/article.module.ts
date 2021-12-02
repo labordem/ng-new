@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { ConfirmedUserGuard } from '../core/guards/confirmed-user.guard';
-
 import { ArticleComponent } from './article.component';
 
 const routes: Routes = [

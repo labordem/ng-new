@@ -83,8 +83,10 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
         takeUntil(this.isDestroyed$),
       )
       .subscribe(
-        (res) => (this.isResetPasswordSucceed = true),
-        (err) => {
+        () => {
+          this.isResetPasswordSucceed = true;
+        },
+        (err: unknown) => {
           this.errorMessage = (err as Error)?.message;
           if (
             this.errorMessage ===
@@ -105,7 +107,6 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
     updateOn: 'submit' | 'change',
     previousValue?: { [key: string]: unknown },
   ): FormGroup {
-    // tslint:disable
     const formGroup = this.formBuilder.group(
       {
         password: [
@@ -121,7 +122,6 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
           this.mustNotBeRejectedValidator(),
         ],
       },
-      // tslint:enable
     );
     if (previousValue !== undefined) {
       formGroup.setValue(previousValue);

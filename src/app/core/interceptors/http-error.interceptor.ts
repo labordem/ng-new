@@ -21,7 +21,7 @@ export class HttpErrorInterceptor implements HttpInterceptor {
     next: HttpHandler,
   ): Observable<HttpEvent<unknown>> {
     return next.handle(request).pipe(
-      // tslint:disable-next-line: rxjs-no-implicit-any-catch
+      // eslint-disable-next-line rxjs/no-implicit-any-catch
       catchError((err: HttpErrorResponse) => {
         const messageToDev = `${this.constructor.name} - ${err.message}`;
         this.logService.error(messageToDev);

@@ -23,7 +23,7 @@ export class HttpJwtInterceptor implements HttpInterceptor {
     request: HttpRequest<unknown>,
     next: HttpHandler,
   ): Observable<HttpEvent<unknown>> {
-    const jwt = this.userService.jwt;
+    const { jwt } = this.userService;
     let newRequest = request;
     if (jwt !== undefined) {
       newRequest = request.clone({

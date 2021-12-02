@@ -52,11 +52,13 @@ export class LayoutComponent implements OnInit, AfterViewChecked, OnDestroy {
     this.themeService.init();
     this.destinations = [
       {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
         name: $localize`:@@home:Home`,
         path: 'home',
         icon: 'home',
       },
       {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
         name: $localize`:@@articles:Articles`,
         path: 'article',
         icon: 'book',
@@ -68,8 +70,12 @@ export class LayoutComponent implements OnInit, AfterViewChecked, OnDestroy {
     return this.userService.account$
       .pipe(takeUntil(this.isDestroyed$))
       .subscribe(
-        (res) => (this.account = res),
-        (err) => (this.account = undefined),
+        (res) => {
+          this.account = res;
+        },
+        () => {
+          this.account = undefined;
+        },
       );
   }
 

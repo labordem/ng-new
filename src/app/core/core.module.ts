@@ -1,4 +1,4 @@
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -7,14 +7,13 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 
 import { environment } from '../../environments/environment';
 import { SharedModule } from '../shared/shared.module';
-
 import { HttpErrorInterceptor } from './interceptors/http-error.interceptor';
 import { HttpJwtInterceptor } from './interceptors/http-jwt.interceptor';
+import { LayoutComponent } from './layout/layout.component';
 import { LayoutFooterComponent } from './layout/layout-footer/layout-footer.component';
 import { LayoutNavComponent } from './layout/layout-nav/layout-nav.component';
 import { LayoutSettingsComponent } from './layout/layout-settings/layout-settings.component';
 import { LayoutSidenavComponent } from './layout/layout-sidenav/layout-sidenav.component';
-import { LayoutComponent } from './layout/layout.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +44,7 @@ import { LayoutComponent } from './layout/layout.component';
       provide: HTTP_INTERCEPTORS,
       useClass: HttpJwtInterceptor,
       multi: true,
-    }
+    },
   ],
 })
 export class CoreModule {}

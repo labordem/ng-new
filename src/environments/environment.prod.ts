@@ -1,4 +1,3 @@
-// tslint:disable-next-line: no-default-import
 import packageJson from '../../package.json';
 
 export const environment = {

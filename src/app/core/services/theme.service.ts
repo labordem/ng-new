@@ -1,6 +1,7 @@
 import { Injectable, Renderer2, RendererFactory2 } from '@angular/core';
 
 import { LocalStorageService } from './local-storage.service';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -13,7 +14,6 @@ export class ThemeService {
     private readonly localStorageService: LocalStorageService,
     private readonly rendererFactory: RendererFactory2,
   ) {
-    // tslint:disable-next-line: no-null-keyword
     this.renderer = this.rendererFactory.createRenderer(undefined, null);
   }
 

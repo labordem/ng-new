@@ -51,13 +51,15 @@ export class LayoutSettingsComponent implements OnInit, OnDestroy {
 
   onImportImage($event: Event | DataTransfer): void {
     if (this.isUsableWithoutApi) {
-      return void this.snackbarService.open('Not available in demo', 'warn');
+      this.snackbarService.open('Not available in demo', 'warn');
+
+      return undefined;
     }
     const file = this.getFileFromEvent($event);
     const formData = new FormData();
     formData.append('file', file);
 
-    void this.userService
+    this.userService
       .updateAvatar$(formData)
       .pipe(takeUntil(this.isDestroyed$))
       .subscribe(
@@ -68,8 +70,11 @@ export class LayoutSettingsComponent implements OnInit, OnDestroy {
           });
           this.changeDetectorRef.markForCheck();
         },
-        (err) => this.snackbarService.open((err as Error).message, 'warn'),
+        (err: unknown) =>
+          this.snackbarService.open((err as Error).message, 'warn'),
       );
+
+    return undefined;
   }
 
   onLogOut(): void {
@@ -93,6 +98,7 @@ export class LayoutSettingsComponent implements OnInit, OnDestroy {
     const event = $event as Event;
     event.preventDefault();
     const target = event.target as HTMLInputElement;
+    // eslint-disable-next-line no-unsafe-optional-chaining
     const file = (target?.files ?? ($event as DataTransfer)?.files)[0];
 
     return file;

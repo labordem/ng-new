@@ -70,12 +70,12 @@ export class ConfirmEmailComponent implements OnInit, OnDestroy {
             (account as Account)?.email,
           ),
         ),
-        switchMap((res) =>
+        switchMap(() =>
           this.dialog.open(ConfirmEmailDialogComponent).afterClosed(),
         ),
         takeUntil(this.isDestroyed$),
       )
-      .subscribe((afterClosed) => this.router.navigate(['/']));
+      .subscribe(() => this.router.navigate(['/']));
   }
 
   private verifyToken(token: string): Subscription {
@@ -96,7 +96,7 @@ export class ConfirmEmailComponent implements OnInit, OnDestroy {
           this.account = loggedInUser.account;
           this.changeDetectorRef.detectChanges();
         },
-        (err) => {
+        (err: unknown) => {
           if ((err as Error)?.message === AuthError.EmailConfirmed) {
             this.isAccountAlreadyConfirmed = true;
             this.changeDetectorRef.detectChanges();

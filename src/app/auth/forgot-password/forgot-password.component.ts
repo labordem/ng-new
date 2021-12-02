@@ -61,14 +61,14 @@ export class ForgotPasswordComponent implements OnInit, OnDestroy {
     return this.authService
       .forgotPassword$(this.f.email?.value as string)
       .pipe(
-        switchMap((res) =>
+        switchMap(() =>
           this.dialog.open(ForgotPasswordDialogComponent).afterClosed(),
         ),
         takeUntil(this.isDestroyed$),
       )
       .subscribe(
-        (afterClosed) => this.router.navigate(['/auth']),
-        (err) => {
+        () => this.router.navigate(['/auth']),
+        (err: unknown) => {
           this.errorMessage = (err as Error)?.message;
           this.isLoading = false;
           this.formGroup.enable();
@@ -77,7 +77,6 @@ export class ForgotPasswordComponent implements OnInit, OnDestroy {
   }
 
   private createFormGroup(updateOn: 'submit' | 'change'): FormGroup {
-    // tslint:disable
     return this.formBuilder.group(
       {
         email: [null, [Validators.required, Validators.email]],
@@ -86,7 +85,6 @@ export class ForgotPasswordComponent implements OnInit, OnDestroy {
         updateOn,
         validators: this.mustNotBeRejectedValidator(),
       },
-      // tslint:enable
     );
   }
 

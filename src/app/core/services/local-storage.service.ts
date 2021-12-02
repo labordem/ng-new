@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { LogService, LogSubject } from '../services/log.service';
+import { LogService, LogSubject } from './log.service';
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +13,7 @@ export class LocalStorageService {
     const value = (JSON.parse(stringValue) as unknown) ?? undefined;
     this.logService.info(
       LogSubject.Store,
-      value !== undefined ? `get ${key}` : `get ${key} (${value})`,
+      value !== undefined ? `get ${key}` : `get ${key} (undefined)`,
     );
 
     return value;

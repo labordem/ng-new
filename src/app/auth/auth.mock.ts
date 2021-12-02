@@ -2,7 +2,6 @@ import { Observable, of, throwError } from 'rxjs';
 import { delay, switchMap } from 'rxjs/operators';
 
 import { Account, Role } from '../core/models/user.model';
-
 import {
   AuthError,
   LoggedInUser,

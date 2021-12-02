@@ -6,7 +6,6 @@ import { switchMap, take } from 'rxjs/operators';
 
 import { environment } from '../../../environments/environment';
 import { Account, Upload } from '../models/user.model';
-
 import { LocalStorageService } from './local-storage.service';
 
 @Injectable({
@@ -51,7 +50,8 @@ export class UserService {
     this.accountSubject$.next(undefined);
     this.localStorageService.removeItemInStorage(this.jwtKey);
     this.jwt = undefined;
-    this.router.navigate(['/auth']);
+    void this.router.navigate(['/auth']);
+    return undefined;
   }
 
   updateAvatar$(formData: FormData): Observable<Upload | undefined> {
