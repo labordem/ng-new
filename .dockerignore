@@ -1,6 +1,7 @@
-.git
+/.angular
+/.git
 .gitignore
-.vscode
+/.vscode
 /node_modules
 /dist
 /docs

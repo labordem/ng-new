@@ -8,6 +8,7 @@
     "source.organizeImports": false
   },
   "search.exclude": {
-    "**/docs/**": true
+    "**/docs/**": true,
+    ".angular/**": true
   }
 }
